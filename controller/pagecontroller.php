@@ -12,41 +12,34 @@
 namespace OCA\Scanner\Controller;
 
 use OCP\IRequest;
-use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
 
-class PageController extends Controller {
+use OCA\Scanner\Storage\ScannerStorage;
 
+class PageController extends Controller {
 
 	private $userId;
 
-	public function __construct($AppName, IRequest $request, $UserId){
+	public function __construct($AppName, IRequest $request, $ScannerStorage, $UserId){
 		parent::__construct($AppName, $request);
+    $this->storage = $ScannerStorage;
 		$this->userId = $UserId;
-	}
-
-	/**
-	 * CAUTION: the @Stuff turns off security checks; for this page no admin is
-	 *          required and no CSRF check. If you don't know what CSRF is, read
-	 *          it up in the docs or you might create a security hole. This is
-	 *          basically the only required method to add this exemption, don't
-	 *          add it to any other method if you don't exactly know what it does
-	 *
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function index() {
-		$params = ['user' => $this->userId];
-		return new TemplateResponse('scanner', 'main', $params);  // templates/main.php
 	}
 
 	/**
 	 * Simply method that posts back the payload of the request
 	 * @NoAdminRequired
 	 */
-	public function doEcho($echo) {
-		return new DataResponse(['echo' => $echo]);
+	public function scan() {
+    $filename = $_POST['filename'];
+    $dir      = $_POST['dir'];
+    $path     = $dir . "/" . $filename;
+
+    $result = $this->storage->scanFile($path);
+
+    // TODO: add some error handling on this result
+    return new DataResponse(['result' => $result]);
 	}
 
 

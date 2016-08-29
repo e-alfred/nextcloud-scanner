@@ -2,13 +2,14 @@
 <info>
     <id>scanner</id>
     <name>Scanner</name>
-    <description>My first Nextcloud app</description>
+    <description>Adds the ability to acquire images from a network-enabled or local scanner</description>
     <licence>AGPL</licence>
     <author>Greg Sutcliffe</author>
     <version>0.0.1</version>
     <namespace>Scanner</namespace>
-    <category>other</category>
+    <category>tool</category>
     <dependencies>
-        <owncloud min-version="" />
+        <owncloud min-version="9.1" />
+        <command os="linux">scanimage</command>
     </dependencies>
 </info>

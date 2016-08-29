@@ -12,32 +12,32 @@
 namespace OCA\Scanner\AppInfo;
 
 use OCP\AppFramework\App;
+use \OCA\Scanner\Storage\ScannerStorage;
 
 require_once __DIR__ . '/autoload.php';
 
-$app = new App('scanner');
-$container = $app->getContainer();
+class Application extends App {
 
-$container->query('OCP\INavigationManager')->add(function () use ($container) {
-	$urlGenerator = $container->query('OCP\IURLGenerator');
-	$l10n = $container->query('OCP\IL10N');
-	return [
-		// the string under which your app will be referenced in Nextcloud
-		'id' => 'scanner',
+  public function __construct(array $urlParams=array()){
+    parent::__construct('scanner', $urlParams);
 
-		// sorting weight for the navigation. The higher the number, the higher
-		// will it be listed in the navigation
-		'order' => 10,
+    $container = $this->getContainer();
 
-		// the route that will be shown on startup
-		'href' => $urlGenerator->linkToRoute('scanner.page.index'),
+    /**
+     * Storage Layer
+     */
+    $container->registerService('ScannerStorage', function($c) {
+      return new ScannerStorage($c->query('UserStorage'));
+    });
 
-		// the icon that will be shown in the navigation
-		// this file needs to exist in img/
-		'icon' => $urlGenerator->imagePath('scanner', 'app.svg'),
+    $container->registerService('UserStorage', function($c) {
+      return $c->query('ServerContainer')->getUserFolder();
+    });
 
-		// the title of your application. This will be used in the
-		// navigation or on the settings page of your app
-		'name' => $l10n->t('Scanner'),
-	];
+  }
+}
+
+$eventDispatcher = \OC::$server->getEventDispatcher();
+$eventDispatcher->addListener('OCA\Files::loadAdditionalScripts', function() {
+  script('scanner', 'menu');  // adds js/script.js
 });

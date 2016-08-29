@@ -10,22 +10,18 @@
 
 (function ($, OC) {
 
-	$(document).ready(function () {
-		$('#hello').click(function () {
-			alert('Hello from your script file');
-		});
+  $(document).ready(function() {
 
-		$('#echo').click(function () {
-			var url = OC.generateUrl('/apps/scanner/echo');
-			var data = {
-				echo: $('#echo-content').val()
-			};
+    $('#scan').click(function () {
+      var url = OC.generateUrl('/apps/scanner/scan');
 
-			$.post(url, data).success(function (response) {
-				$('#echo-result').text(response.echo);
-			});
+      $.get(url).success(function (response) {
+        var path = OC.imagePath('scanner', response.image);
+        $("#scan-image").attr("src",path);
+        $("#scan-image").removeClass('hidden');
+      });
 
-		});
-	});
+    });
+  });
 
 })(jQuery, OC);

@@ -40,4 +40,5 @@ class Application extends App {
 $eventDispatcher = \OC::$server->getEventDispatcher();
 $eventDispatcher->addListener('OCA\Files::loadAdditionalScripts', function() {
   script('scanner', 'menu');  // adds js/script.js
+  style('scanner', 'style');  // adds js/script.js
 });

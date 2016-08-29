@@ -1,3 +1,4 @@
-#hello {
-	color: red;
+.icon-filetype-scanner.svg {
+    background-image: url("../img/scanner.svg");
+    background-size: 16px;
 }

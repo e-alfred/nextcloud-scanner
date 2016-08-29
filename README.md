@@ -50,3 +50,11 @@ or:
     phpunit -c phpunit.integration.xml
 
 for integration tests
+
+## License
+
+AGPL
+
+Scanner logo obtained from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gnome-dev-scanner.svg)
+(LGPL)

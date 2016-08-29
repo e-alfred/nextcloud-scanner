@@ -17,7 +17,7 @@ use OCP\AppFramework\Controller;
 
 use OCA\Scanner\Storage\ScannerStorage;
 
-class PageController extends Controller {
+class ScannerController extends Controller {
 
 	private $userId;
 

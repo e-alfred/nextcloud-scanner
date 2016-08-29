@@ -19,7 +19,6 @@
  */
 return [
     'routes' => [
-	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
-	   ['name' => 'page#scan', 'url' => '/scan', 'verb' => 'POST'],
+	   ['name' => 'scanner#scan', 'url' => '/scan', 'verb' => 'POST'],
     ]
 ];

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>scanner</id>
+    <name>Scanner</name>
+    <description>My first Nextcloud app</description>
+    <licence>AGPL</licence>
+    <author>Greg Sutcliffe</author>
+    <version>0.0.1</version>
+    <namespace>Scanner</namespace>
+    <category>other</category>
+    <dependencies>
+        <owncloud min-version="" />
+    </dependencies>
+</info>

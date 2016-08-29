@@ -1,6 +1,8 @@
-owncloud-scanner (0.0.1)
-* **Security**: Security description here
-* **Backwards incompatible change**: Changes in the API
-* **New dependency**: New dependencies such as a new ownCloud or PHP version
-* **Bugfix**: Bugfix description
-* **Enhancement**: New feature description
+# 0.0.2
+
+* **Bugfix**: Drop binary dependencies for now, they seem to not work properly
+* Update README / LICENSE / TODO
+
+# 0.0.1
+
+* Initial version - here be dragons!

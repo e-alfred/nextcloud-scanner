@@ -1,10 +1,17 @@
-## Work in progress
+# TODO
 
-* controller/scannercontroller.php:41: add some error handling on this result
-* js/menu.js:24:                       Should this be ajax?
-* js/menu.js:25:                       Scans are slow, show a spinner / bar
-* lib/Storage/ScannerStorage.php:28:   This can happen because we don't refresh the file listing
-* lib/Storage/ScannerStorage.php:32:   TODO: There's probably a way to stream this without the tempfile
+## Bugs / immediate stuff
+
+* Add an spinner to show a scan in progress
+* Figure out how to refresh the file view
+* See if there's a PHP way to stream directly from stdout and not use a tmpfile
+* Add some error handling
+* Add some tests
+
+## Roadmap
 
 * Add settings to control colour, resoultion, device url
   * Possibly make these show up in a JS popup per scan (with defaults)
+* Combine scanned pages into single PDF doc
+* Clientside scanning sent via file upload?
+  * (is it worth it? client could scan locally and then upload themselves...)

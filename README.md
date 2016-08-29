@@ -1,59 +1,67 @@
-# Scanner
-Place this app in **nextcloud/apps/**
+# Scanner - Scan images directly into NextCloud
 
-## Building the app
+**Scanner** is a NextCloud app which adds the ability to scan images from a
+local or network-available scanner (via the SANE tools) directly into
+Nextcloud.
 
-The app can be built by using the provided Makefile by running:
+## Installation
 
-    make
+* Place the code in [your nextcloud folder]/apps/scanner
+* Make sure you have `scanimage` and `pnmtojpeg` binaries available
+  * On Debian, these are provided by the `sane-utils` and `netpbm` packages
+* Ensure executing `scanimage -L` on your NextCloud server returns the correct scanner
+  * Configuring SANE is beyond this README, but:
+    * For scanners shared by another host, add the hostname to /etc/sane.d/net.conf
 
-This requires the following things to be present:
-* make
-* which
-* tar: for building the archive
-* curl: used if phpunit and composer are not installed to fetch them from the web
-* npm: for building and testing everything JS, only required if a package.json is placed inside the **js/** folder
+## Configuration
 
-The make command will install or update Composer dependencies if a composer.json is present and also **npm run build** if a package.json is present in the **js/** folder. The npm **build** script should use local paths for build systems and package managers, so people that simply want to build the app won't need to install npm libraries globally, e.g.:
+Currently **Scanner** has no settings, so there is no in-app configuration.
 
-**package.json**:
-```json
-"scripts": {
-    "test": "node node_modules/gulp-cli/bin/gulp.js karma",
-    "prebuild": "npm install && node_modules/bower/bin/bower install && node_modules/bower/bin/bower update",
-    "build": "node node_modules/gulp-cli/bin/gulp.js"
-}
-```
+## Usage
 
+**Scanner** adds a new menu entry to the **Files** menu:
 
-## Publish to App Store
+![](./screenshots/menu.png)
 
-First get an account for the [App Store](http://apps.nextcloud.com/) then run:
+Selecting this will allow you to specify a filename as usual (default `scan.jpg`):
 
-    make && make appstore
+![](./screenshots/scan.png)
 
-The archive is located in build/artifacts/appstore and can then be uploaded to the App Store.
+The app will then call out to scanimage to get a scan, and put the result in
+the specified file:
 
-## Running tests
-You can use the provided Makefile to run all tests by using:
+![](./screenshots/result.png)
+![](./screenshots/show.png)
 
-    make test
+## Known Issues
 
-This will run the PHP unit and integration tests and if a package.json is present in the **js/** folder will execute **npm run test**
+* Pressing `Enter` after entering a filename will appear to do nothing
+  * This is because scanning is a slow process and no spinner is yet implemented
+* Only the default scanner is used for `scanimage`
+  * If you have more than one scanner, scanimage will only use the first
+* Files view does not refresh to show the scanned file
+  * As a workaround, reload the page or change folder and then come back
 
-Of course you can also install [PHPUnit](http://phpunit.de/getting-started.html) and use the configurations directly:
+More issues / roadmap details in the [TODO](TODO.md) file
 
-    phpunit -c phpunit.xml
+## License / Copyright
 
-or:
+Copyright (c) 2016 Greg Sutcliffe
 
-    phpunit -c phpunit.integration.xml
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-for integration tests
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
 
-## License
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AGPL
+### Extra files
 
 Scanner logo obtained from
 [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gnome-dev-scanner.svg)

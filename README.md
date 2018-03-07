@@ -12,6 +12,7 @@ Nextcloud.
 * Ensure executing `scanimage -L` on your NextCloud server returns the correct scanner
   * Configuring SANE is beyond this README, but:
     * For scanners shared by another host, add the hostname to /etc/sane.d/net.conf
+    * Make sure scanimage can be executed by the user that runs your webserver (for example www-data or apache)
 
 ## Configuration
 

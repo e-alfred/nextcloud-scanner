@@ -8,7 +8,7 @@
     <author>e-alfred</author>
     <version>0.0.2</version>
     <namespace>Scanner</namespace>
-    <category>tool</category>
+    <category>tools</category>
     <website>https://github.com/e-alfred/nextcloud-scanner</website>
     <bugs>https://github.com/e-alfred/nextcloud-scanner/issues</bugs>
     <documentation>https://github.com/e-alfred/nextcloud-scanner/</documentation>

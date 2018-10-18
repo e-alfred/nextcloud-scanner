@@ -11,35 +11,57 @@
 
 namespace OCA\Scanner\Controller;
 
-use OCP\IRequest;
-use OCP\AppFramework\Http\DataResponse;
-use OCP\AppFramework\Controller;
-
 use OCA\Scanner\Storage\ScannerStorage;
+use OCA\Scanner\Storage\StorageException;
+use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http;
+use OCP\AppFramework\Http\DataResponse;
+use OCP\Files\GenericFileException;
+use OCP\Files\NotPermittedException;
+use OCP\IRequest;
 
 class ScannerController extends Controller {
 
 	private $userId;
+	/**
+	 * @var ScannerStorage
+	 */
+	private $storage;
 
-	public function __construct($AppName, IRequest $request, $ScannerStorage, $UserId){
+	public function __construct(
+		$AppName,
+		IRequest $request,
+		ScannerStorage $ScannerStorage,
+		$UserId
+	) {
 		parent::__construct($AppName, $request);
-    $this->storage = $ScannerStorage;
+		$this->storage = $ScannerStorage;
 		$this->userId = $UserId;
 	}
 
 	/**
 	 * Simply method that posts back the payload of the request
+	 *
 	 * @NoAdminRequired
+	 * @param $filename
+	 * @param $dir
+	 * @param $scanOptions
+	 * @return DataResponse
 	 */
-	public function scan() {
-    $filename = $_POST['filename'];
-    $dir      = $_POST['dir'];
-    $path     = $dir . "/" . $filename;
-
-    $result = $this->storage->scanFile($path);
-
-    // TODO: add some error handling on this result
-    return new DataResponse(['result' => $result]);
+	public function scan($filename, $dir, $scanOptions) {
+		$path = $dir . '/' . $filename;
+		$mode = (int)$scanOptions['mode'];
+		$resolution = (int)$scanOptions['resolution'];
+		try {
+			$result = $this->storage->scanFile($path, $mode, $resolution);
+			$status = Http::STATUS_OK;
+		} catch (StorageException $e) {
+		} catch (GenericFileException $e) {
+		} catch (NotPermittedException $e) {
+			$result = $e->getMessage();
+			$status = Http::STATUS_BAD_REQUEST;
+		}
+		return new DataResponse(['result' => $result], $status);
 	}
 
 

@@ -2,7 +2,7 @@
 <info>
     <id>scanner</id>
     <name>Scanner</name>
-    <description>Adds the ability to acquire images from a network-enabled or local scanner</description>
+    <description>Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system.</description>
     <licence>AGPL</licence>
     <author>Greg Sutcliffe</author>
     <author>e-alfred</author>

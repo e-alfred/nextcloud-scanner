@@ -1,6 +1,7 @@
 <div id="{dialog_name}" title="{title}">
 	<p>{message}</p>
 	<form>
+		<div id="previewcontainer">Fetching preview....</div>
 		<label>
 			Resolution
 			<input name="resolution" type="number" value="300"></label>
@@ -11,6 +12,10 @@
 				<option value="1">Greyscale</option>
 				<option value="2">Lineart</option>
 			</select>
+			<input type="text" name="x">
+			<input type="text" name="y">
+			<input type="text" name="l">
+			<input type="text" name="t">
 		</label>
 	</form>
 </div>

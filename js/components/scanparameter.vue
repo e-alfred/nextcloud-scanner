@@ -1,11 +1,11 @@
 <template>
 	<div>
-		<label style="text-transform:capitalize;">
+		<label style="text-transform:capitalize;" :title=description>
 			<span class="icon-history"
 				  style="cursor:pointer; display:inline-block"
 				  v-on:click="resetDefault"></span>
 			{{ name }}: {{ value }}
-			<div v-if="type === 'select'">
+			<div v-if="type === 'list'">
 				<select
 						v-on:change="onInputChange"
 				>
@@ -26,7 +26,7 @@
 				>
 			</div>
 			<div v-else-if="type === 'readonly'">
-			<input type="text" disabled readonly :value="value">
+				<input type="text" disabled readonly :value="value">
 			</div>
 		</label>
 	</div>
@@ -43,29 +43,14 @@
 		},
 		computed: {
 			type: function () {
-				if (this.params.options.split('..').length === 2) {
-					return 'range';
-				}
-
-				if (this.params.options.split('|').length > 1) {
-					return 'select';
-				}
-				return 'readonly'
+				return this.params.type
+			},
+			description: function () {
+				return this.params.description
 			},
 			options: function () {
-				switch (this.type) {
-					case 'select':
-						let options = this.params.options.split('|');
-						options[options.length - 1] = options[options.length - 1].replace('mm', '').replace('dpi', '');
-						return options;
-					case 'range':
-						let range = this.params.options.split('..');
-						//Strip out units
-						range[1] = range[1].replace('mm', '').replace('dpi', '');
-						return range;
-					default:
-						return this.params.options;
-				}
+				return this.params.options;
+
 			},
 			value: function () {
 				return this.$store.getters.scanParam(this.name);

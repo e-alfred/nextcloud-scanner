@@ -66,8 +66,9 @@ export default new Vuex.Store({
 			return state.backends[state.selectedBackend].params;
 		},
 		scanBedSize: (state, getters) => {
+			console.log(getters.currentBackendParams);
 			let {x, y} = getters.currentBackendParams;
-			return [x.default, y.default];
+			return [x.options[1], y.options[1]];
 		},
 		preview: (state) => {
 			return state.previews[state.selectedBackend];

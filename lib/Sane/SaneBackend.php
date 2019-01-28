@@ -4,6 +4,11 @@ declare(strict_types=1);
 namespace OCA\Scanner\Sane;
 
 
+use OCA\Scanner\Sane\Param\ListScanParam;
+use OCA\Scanner\Sane\Param\ScanParameterFactory;
+use OCA\Scanner\Sane\Param\ScanParamList;
+use OCA\Scanner\Sane\Param\ScanParamListInterface;
+
 class SaneBackend {
 
 	/**
@@ -15,7 +20,7 @@ class SaneBackend {
 	 */
 	private $id;
 
-	public function __construct(string $id, array $params) {
+	public function __construct(string $id, ScanParamListInterface $params) {
 
 		$this->params = $params;
 		$this->id = $id;
@@ -25,11 +30,18 @@ class SaneBackend {
 
 		exec("scanimage -A -d {$id}", $result);
 		$result = implode("\n", $result);
-		preg_match_all('/\s+--?(\S+)\s(.*)\s+\[(.*)\]/', $result, $matches);
-		list(, $parameterNames, $options, $defaults) = $matches;
-		$params = [];
+		return self::fromShellOutput($result);
 
-		array_walk($parameterNames, function ($name, $idx) use (&$params, $options, $defaults) {
+	}
+
+	public static function fromShellOutput(string $shellOutput): self {
+		preg_match('/`(.+)\'/', $shellOutput, $idMatch);
+		$id = $idMatch[1];
+		preg_match_all('/\s+--?(\S+)\s(\S*)\s+\[(\S*?)\].*\n(.+)\n/', $shellOutput, $matches);
+		list(, $parameterNames, $options, $defaults, $descriptions) = $matches;
+		$params = [];
+		$factory = new ScanParameterFactory();
+		array_walk($parameterNames, function ($name, $idx) use (&$params, $options, $descriptions, $defaults, $factory) {
 
 			/**
 			 * Remove some bogus params that are either deprecated or nonsensical.
@@ -41,71 +53,51 @@ class SaneBackend {
 			if (\in_array($name, $blacklist, true)) {
 				return;
 			}
-
-			$params[$name] = [
-				'options' => $options[$idx],
-				'default' => $defaults[$idx]
-			];
+			$params[] = $factory->create($name, $descriptions[$idx], $options[$idx], $defaults[$idx]);
 		});
+		$paramList = new ScanParamList($params);
 
-		return new self($id, $params);
-
+		return new self($id, $paramList);
 	}
 
 	public function acceptsParamValue(string $paramName, string $value): bool {
 		if (!$this->acceptsParam($paramName)) {
 			return false;
 		}
-		$options = $this->params[$paramName]['options'];
-		$list = $this->trimUnits(explode('|', $options));
-		if (\count($list) > 1) {
-			return \in_array($value, $list, true);
-		}
-
-		$range = $this->trimUnits(explode('..', $options));
-		if (\count($range) > 1) {
-			$min = (float)$range[0];
-			$max = (float)$range[1];
-			$val = (float)$value;
-			return ($val >= $min && $val <= $max);
-		}
-		return false;
+		return $this->params->get($paramName)->accepts($value);
 	}
 
 	public function acceptsParam(string $paramName): bool {
-		return array_key_exists($paramName, $this->params);
+		return $this->params->contains($paramName);
 	}
 
-	private function trimUnits(array $array): array {
-		$array[\count($array) - 1] = str_replace(['mm', 'dpi'], '', $array[\count($array) - 1]);
-		return $array;
+	public function id(): string {
+		return $this->id;
 	}
 
 	public function toArray(): array {
-		return ['id' => $this->id, 'params' => $this->params];
+		return ['id' => $this->id, 'params' => $this->params->toArray()];
 	}
 
 	public function getClosestAvailableResolution(int $desired): int {
-		if (!isset($this->params['resolution'])) {
+		if (!$this->acceptsParam('resolution')) {
 			//TODO exception?
 			return 0;
 		}
-		$options = $this->params['resolution']['options'];
-		$list = explode('|', $options);
 		$desiredResolution = 30;
-		$chosenResolution = $desiredResolution;
-		if (!empty($list)) {
-			foreach ($list as $option) {
+
+		$param = $this->params->get('resolution');
+		$options = $param->options();
+		if ($param instanceof ListScanParam) {
+			foreach ($options as $option) {
 				if ($option > $desiredResolution) {
-					$chosenResolution = $option;
-					break;
+					return (int)$option;
 				}
 			}
-		} else {
-			$range = explode('..', $options);
-			$min = $range[0];
-			$chosenResolution = ($min > $desiredResolution) ? $min : $desiredResolution;
 		}
+
+		$min = $options[0];
+		$chosenResolution = ($min > $desiredResolution) ? $min : $desiredResolution;
 
 		return (int)$chosenResolution;
 	}

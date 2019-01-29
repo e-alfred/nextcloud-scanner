@@ -19,6 +19,7 @@
  */
 return [
     'routes' => [
+	   ['name' => 'scanner#selfcheck', 'url' => '/selfcheck', 'verb' => 'GET'],
 	   ['name' => 'scanner#scan', 'url' => '/scan', 'verb' => 'POST'],
 	   ['name' => 'scanner#backends', 'url' => '/backends', 'verb' => 'GET'],
 	   ['name' => 'scanner#backend', 'url' => '/backends/{id}', 'verb' => 'GET'],

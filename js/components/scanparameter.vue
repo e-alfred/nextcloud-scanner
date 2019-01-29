@@ -1,11 +1,9 @@
 <template>
 	<div>
-		<label style="text-transform:capitalize;" :title=description>
-			<span class="icon-history"
-				  style="cursor:pointer; display:inline-block"
-				  v-on:click="resetDefault"></span>
-			{{ name }}: {{ value }}
-			<div v-if="type === 'list'">
+		<label style="text-transform:capitalize; white-space: nowrap;"
+			   :title=description>
+			<span>{{ name }}</span>
+			<span v-if="type === 'list'">
 				<select
 						v-on:change="onInputChange"
 				>
@@ -15,8 +13,8 @@
 						</option>
 					</template>
 				</select>
-			</div>
-			<div v-else-if="type === 'range'">
+			</span>
+			<span v-else-if="type === 'range'">
 				<input
 						type="range"
 						:min="options[0]"
@@ -24,10 +22,14 @@
 						:value="value"
 						v-on:change="onInputChange"
 				>
-			</div>
-			<div v-else-if="type === 'readonly'">
+				{{ value }}
+			</span>
+			<span v-else-if="type === 'readonly'">
 				<input type="text" disabled readonly :value="value">
-			</div>
+			</span>
+			<span class="icon-history"
+				  style="cursor:pointer; display:inline-block; float:right;"
+				  v-on:click="resetDefault"></span>
 		</label>
 	</div>
 </template>
@@ -72,3 +74,5 @@
 		}
 	}
 </script>
+<style scoped lang="scss">
+

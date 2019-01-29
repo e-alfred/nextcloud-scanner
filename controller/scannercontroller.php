@@ -43,6 +43,31 @@ class ScannerController extends Controller {
 		$this->cache = $cacheFactory->createDistributed('scanner');
 	}
 
+	public function selfcheck() {
+		$errors = [];
+
+		foreach (['scanimage', 'pnmtojpeg'] as $binary) {
+			if (!$this->commandExist($binary)) {
+				$errors[] = sprintf('Cannot find required binary %s', $binary);
+			}
+		}
+
+		if (empty($errors)) {
+			return new DataResponse(
+				[],
+				Http::STATUS_OK);
+		}
+
+		return new DataResponse(
+			$errors,
+			Http::STATUS_BAD_GATEWAY);
+	}
+
+	private function commandExist($cmd): bool {
+		$return = shell_exec(sprintf('command -v %s', escapeshellarg($cmd)));
+		return null !== $return;
+	}
+
 	/**
 	 * Simply method that posts back the payload of the request
 	 *

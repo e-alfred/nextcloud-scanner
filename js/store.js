@@ -1,6 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+const fetchOptions = {
+	headers: {
+		'requesttoken': OC.requestToken,
+	},
+	credentials: 'include'
+};
 Vue.use(Vuex);
 /**
  * At least my HP scanner backend defaults to 'Lineart' which is inconvenient.
@@ -18,21 +24,28 @@ const initialScanParams = {
 export default new Vuex.Store({
 	state: {
 		appState: {
-			loaded: false,
+			status: 'initializing',
+			statusMessage: 'Initializing',
 			fetchingPreview: false
 		},
+		errors: [],
 		selectedBackend: 0,
 		previews: [],
 		backends: [],
 		scanParams: [],
 	},
 	mutations: {
+		setAppStatus (state, payload) {
+			Vue.set(state.appState, 'status', payload);
+		},
+		setAppStatusMessage (state, payload) {
+			Vue.set(state.appState, 'statusMessage', payload);
+		},
 		setPreviewAppState (state, payload) {
 			Vue.set(state.appState, 'fetchingPreview', !!payload);
 		},
 		setBackends (state, payload) {
 			state.backends = payload;
-
 			state.scanParams = Array(payload.length).fill(initialScanParams);
 			state.previews = Array(payload.length).fill(null)
 
@@ -59,6 +72,12 @@ export default new Vuex.Store({
 				...params,
 				[payload]: defaultVal
 			})
+		},
+		addError (state, payload) {
+			state.errors.push(payload)
+		},
+		removeError (state, payload) {
+			state.errors.splice(payload, 1);
 		}
 	},
 	getters: {
@@ -66,7 +85,6 @@ export default new Vuex.Store({
 			return state.backends[state.selectedBackend].params;
 		},
 		scanBedSize: (state, getters) => {
-			console.log(getters.currentBackendParams);
 			let {x, y} = getters.currentBackendParams;
 			return [x.options[1], y.options[1]];
 		},
@@ -84,13 +102,49 @@ export default new Vuex.Store({
 		}
 	},
 	actions: {
-		loadBackends ({commit}) {
-			return jQuery.get(OC.generateUrl('/apps/scanner/backends')).then(response => commit('setBackends', response));
+		init ({commit, dispatch}) {
+			commit('setAppStatusMessage', 'Executing self-test');
+			jQuery.get(OC.generateUrl('/apps/scanner/selfcheck')).then(response => {
+				commit('setAppStatusMessage', 'Fetching SANE backends');
+				dispatch('loadBackends');
+			}).fail(response => {
+				if (!response.responseJSON.length) {
+					dispatch('addError', 'Unknown error during selfcheck');
+					commit('setAppStatus', 'error');
+					return;
+				}
+				response.responseJSON.forEach(error => {
+					dispatch('addError', error);
+					commit('setAppStatus', 'error')
+				})
+			});
 		},
-		fetchPreview ({commit, getters}) {
+		addError ({commit}, payload) {
+			console.warn(payload);
+			commit('addError', payload)
+		},
+		removeError ({commit}, payload) {
+			commit('removeError', payload)
+		},
+		loadBackends ({commit, dispatch}) {
+			return jQuery.get(OC.generateUrl('/apps/scanner/backends')).then(response => {
+				if (!response.length) {
+					commit('addError', 'There are no available SANE backends');
+					commit('setAppStatus', 'error');
+					return;
+				}
+				commit('setAppStatusMessage', 'Initializing Scan options');
+				commit('setBackends', response);
+				commit('setAppStatus', 'ready');
+			});
+		},
+		fetchPreview ({commit, getters, dispatch}) {
 			commit('setPreviewAppState', true);
 			return jQuery.get(OC.generateUrl('/apps/scanner/preview'), {scanOptions: getters.scanParams}).then(response => {
 				commit('setPreview', response);
+				commit('setPreviewAppState', false);
+			}).fail(response => {
+				dispatch('addError', 'Could not fetch preview');
 				commit('setPreviewAppState', false);
 			});
 		},

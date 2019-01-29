@@ -1,5 +1,5 @@
 <template>
-	<div style="height:90%">
+	<div style="max-width:450px;max-height:75vh;">
 		<VueCropper
 				ref="cropper"
 				:src="scanPreview.preview"
@@ -17,9 +17,10 @@
 		<button
 				class="primary"
 				v-on:click="fetchPreview"
-				title="Generate a preview with the current settings"
+				title="Generate a preview dwith the current settings"
 				v-if="!fetchingPreview"
-		>Preview</button>
+		>Preview
+		</button>
 		<Spinner color="silver" v-else></Spinner>
 	</div>
 </template>
@@ -87,7 +88,7 @@
 					height: mm2px(this.$store.getters.scanParam('y'), this.scanPreview.dpi),
 				}
 			},
-			fetchingPreview(){
+			fetchingPreview () {
 				return this.$store.state.appState.fetchingPreview;
 			}
 

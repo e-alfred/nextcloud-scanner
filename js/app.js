@@ -1,5 +1,5 @@
 import Vue from "vue";
-import ScanDialog from './components/scanoptionsdialog.vue'
+import Wrapper from './components/wrapper.vue'
 import store from './store';
 
 export class App {
@@ -16,16 +16,16 @@ export class App {
 			el: this.targelEl,
 			store,
 			components: {
-				ScanDialog,
+				Wrapper,
 			},
 			render (h) {
-				return h('ScanDialog')
+				return h('Wrapper')
 			}
 		})
 		this.initialStateCopy = JSON.parse(JSON.stringify(store.state))
 		// const View = Vue.extend(ScanDialog);
 		// new View({store}).$mount(this.targelEl)
-		store.dispatch('loadBackends');
+		store.dispatch('init');
 	}
 
 	getScanParams () {

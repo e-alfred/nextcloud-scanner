@@ -29,7 +29,12 @@ class BackendCollection {
 		}
 		$backends = [];
 		foreach ($backendIds as $backendId) {
-			$backends[$backendId] = SaneBackend::fromShell($backendId);
+			try {
+				$backend = SaneBackend::fromShell($backendId);
+				$backends[$backendId] = $backend;
+			} catch (Exception\InvalidArgumentException $e) {
+				continue;
+			}
 		}
 		return new self($backends);
 	}

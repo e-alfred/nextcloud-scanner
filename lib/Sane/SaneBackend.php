@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace OCA\Scanner\Sane;
 
 
+use OCA\Scanner\Sane\Exception\InvalidArgumentException;
 use OCA\Scanner\Sane\Param\ListScanParam;
 use OCA\Scanner\Sane\Param\ScanParameterFactory;
 use OCA\Scanner\Sane\Param\ScanParamList;
@@ -26,17 +27,30 @@ class SaneBackend {
 		$this->id = $id;
 	}
 
+	/**
+	 * @param string $id
+	 * @return SaneBackend
+	 * @throws InvalidArgumentException
+	 */
 	public static function fromShell(string $id): self {
-
+		$id = 'device `net:192.168.1.11:pixma:04A9173A\' is a CANON Canon PIXMA MP250 multi-function peripheral';
 		exec("scanimage -A -d {$id}", $result);
 		$result = implode("\n", $result);
 		return self::fromShellOutput($result);
 
 	}
 
+	/**
+	 * @param string $shellOutput
+	 * @return SaneBackend
+	 * @throws InvalidArgumentException
+	 */
 	public static function fromShellOutput(string $shellOutput): self {
 		preg_match('/`(.+)\'/', $shellOutput, $idMatch);
 		$id = $idMatch[1];
+		if (empty($id)) {
+			throw new InvalidArgumentException('ID could not be determined from input string: ' . $shellOutput);
+		}
 		preg_match_all('/\s+--?(\S+)\s(\S*)\s+\[(\S*?)\].*\n(.+)\n/', $shellOutput, $matches);
 		list(, $parameterNames, $options, $defaults, $descriptions) = $matches;
 		$params = [];
@@ -57,7 +71,7 @@ class SaneBackend {
 		});
 		$paramList = new ScanParamList($params);
 
-		return new self($id, $paramList);
+		return new self((string)$id, $paramList);
 	}
 
 	public function acceptsParamValue(string $paramName, string $value): bool {

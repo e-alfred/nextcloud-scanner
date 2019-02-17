@@ -13,6 +13,8 @@ Nextcloud.
   * Configuring SANE is beyond this README, but:
     * For scanners shared by another host, add the hostname to /etc/sane.d/net.conf
     * Make sure scanimage can be executed by the user that runs your webserver (for example www-data or apache)
+      * You can add this line to your /etc/sudoers file (change the user to the corresponding one running the webserver):
+      `www-data ALL = (root) NOPASSWD: /usr/bin/scanimage`
 
 ## Configuration
 
@@ -28,8 +30,7 @@ Selecting this will allow you to specify a filename as usual (default `scan.jpg`
 
 ![](./screenshots/scan.png)
 
-The app will then call out to scanimage to get a scan, and put the result in
-the specified file:
+The app will then call `scanimage` to get a scan, and save the resulting image with the specified filename:
 
 ![](./screenshots/result.png)
 ![](./screenshots/show.png)

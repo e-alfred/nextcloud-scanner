@@ -33,7 +33,6 @@ class SaneBackend {
 	 * @throws InvalidArgumentException
 	 */
 	public static function fromShell(string $id): self {
-		$id = 'device `net:192.168.1.11:pixma:04A9173A\' is a CANON Canon PIXMA MP250 multi-function peripheral';
 		exec("scanimage -A -d {$id}", $result);
 		$result = implode("\n", $result);
 		return self::fromShellOutput($result);

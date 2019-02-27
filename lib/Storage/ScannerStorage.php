@@ -13,6 +13,7 @@ namespace OCA\Scanner\Storage;
 
 use Exception;
 use OC\Files\Node\Folder;
+use OCA\Scanner\Sane\ScanCommandArgs;
 use OCP\Files\GenericFileException;
 use OCP\Files\NotPermittedException;
 
@@ -22,11 +23,6 @@ class StorageException extends Exception {
 class ScannerStorage {
 
 	private $storage;
-	private $modes = [
-		0 => 'Color',
-		1 => 'Gray',
-		2 => 'Lineart'
-	];
 
 	public function __construct(Folder $storage) {
 		$this->storage = $storage;
@@ -34,29 +30,29 @@ class ScannerStorage {
 
 	/**
 	 * @param $name
-	 * @param string $mode
-	 * @param int $resolution
+	 * @param ScanCommandArgs $args
 	 * @return string
 	 * @throws GenericFileException
 	 * @throws NotPermittedException
 	 * @throws StorageException
 	 */
-	public function scanFile($name, $mode = 0, $resolution = 300) {
+	public function scanFile($name, ScanCommandArgs $args) {
 		if ($this->storage->nodeExists($name)) {
-			// TODO: This can happen because we don't refresh the file listing
 			throw new StorageException('File already exists');
 		}
-		$file = $this->storage->newFile($name);
+		$img = uniqid('scan', true);
+		$command = "scanimage {$args} | pnmtojpeg > /tmp/{$img}";
 		// TODO: There's probably a way to stream this without the tempfile
 		exec(
-			"scanimage --mode {$this->modes[$mode]} --resolution {$resolution} -x 215 -y 297| pnmtojpeg > /tmp/img",
+			$command,
 			$output,
 			$status
 		);
 		if ($status) {
 			throw new StorageException('Something went wrong while attempting to scan');
 		}
-		$data = file_get_contents('/tmp/img');
+		$data = file_get_contents("/tmp/{$img}");
+		$file = $this->storage->newFile($name);
 		$file->putContent($data);
 		return 'success';
 	}

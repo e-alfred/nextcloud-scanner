@@ -27,11 +27,15 @@ class Application extends App {
      * Storage Layer
      */
     $container->registerService('ScannerStorage', function($c) {
-      return new ScannerStorage($c->query('UserStorage'));
+      return new ScannerStorage($c->query('UserStorage'), $c->query('L10N'));
     });
 
     $container->registerService('UserStorage', function($c) {
       return $c->query('ServerContainer')->getUserFolder();
+    });
+
+    $container->registerService('L10N', function($c) {
+    return $c->query('ServerContainer')->getL10N($c->query('AppName'));
     });
 
   }

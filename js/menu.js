@@ -15,18 +15,18 @@ var ScannerMenuPlugin = {
 
 		menu.addMenuEntry({
 			id: 'scanner',
-			displayName: 'Scan Image',
+			displayName: t('scanner', 'Scan Image'),
 			templateName: 'scan.jpg',
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {
-				plugin.scanOptionsModal('Please adjust scan parameters', 'Scan Options', function (result, formData) {
+				plugin.scanOptionsModal(t('scanner', 'Please adjust scan parameters'), t('scanner', 'Scan Options'), function (result, formData) {
 					if (!result) {
-						OC.Notification.showTemporary('Scan aborted.');
+						OC.Notification.showTemporary(t('scanner', 'Scan aborted.'));
 						return;
 					}
 					var dir = fileList.getCurrentDirectory();
-					OC.Notification.showTemporary('Scan started.');
+					OC.Notification.showTemporary(t('scanner', 'Scan started.'));
 					$.ajax({
 						url: OC.generateUrl('/apps/scanner/scan'),
 						async: true,
@@ -38,7 +38,7 @@ var ScannerMenuPlugin = {
 						},
 						success: function (data) {
 							fileList.changeDirectory(dir, true, true);
-							OC.Notification.showTemporary('Scan complete');
+							OC.Notification.showTemporary(t('scanner', 'Scan complete'));
 						},
 						error: function (data) {
 							OC.Notification.showTemporary(data.result);
@@ -87,20 +87,20 @@ var ScannerMenuPlugin = {
 			}
 
 			var buttonlist = [{
-				text: t('core', 'No'),
+				text: t('scanner', 'No'),
 				click: function () {
 					if (callback !== undefined) {
 						callback(false, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					$(dialogId).ocdialog('close');
+					$(dialogId).ocdialog(t('scanner', 'close'));
 				}
 			}, {
-				text: t('core', 'Yes'),
+				text: t('scanner', 'Yes'),
 				click: function () {
 					if (callback !== undefined) {
 						callback(true, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					$(dialogId).ocdialog('close');
+					$(dialogId).ocdialog(t('scanner', 'close'));
 				},
 				defaultButton: true
 			}

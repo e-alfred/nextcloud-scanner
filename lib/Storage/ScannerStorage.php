@@ -15,11 +15,14 @@ use Exception;
 use OC\Files\Node\Folder;
 use OCP\Files\GenericFileException;
 use OCP\Files\NotPermittedException;
+use \OCP\IL10N;
 
 class StorageException extends Exception {
 }
 
 class ScannerStorage {
+
+	private $trans;
 
 	private $storage;
 	private $modes = [
@@ -28,9 +31,14 @@ class ScannerStorage {
 		2 => 'Lineart'
 	];
 
-	public function __construct(Folder $storage) {
+	public function __construct(Folder $storage, IL10N $trans) {
 		$this->storage = $storage;
+		$this->trans = $trans;
 	}
+
+	public function getLanguageCode() {
+		return $this->trans->getLanguageCode();
+  }
 
 	/**
 	 * @param $name
@@ -44,7 +52,7 @@ class ScannerStorage {
 	public function scanFile($name, $mode = 0, $resolution = 300) {
 		if ($this->storage->nodeExists($name)) {
 			// TODO: This can happen because we don't refresh the file listing
-			throw new StorageException('File already exists');
+			throw new StorageException($this->trans->t('File already exists'));
 		}
 		$file = $this->storage->newFile($name);
 		// TODO: There's probably a way to stream this without the tempfile
@@ -54,11 +62,11 @@ class ScannerStorage {
 			$status
 		);
 		if ($status) {
-			throw new StorageException('Something went wrong while attempting to scan');
+			throw new StorageException($this->trans->t('Something went wrong while attempting to scan'));
 		}
 		$data = file_get_contents('/tmp/img');
 		$file->putContent($data);
-		return 'success';
+		return $this->trans->t('success');
 	}
 
 }

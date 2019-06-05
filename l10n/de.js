@@ -2,7 +2,7 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Bild scannen",
-    "Please adjust scan parameters" : "Bitte passen Sie die Scan-Parameter an",
+    "Please adjust scan parameters" : "Bitte die Scan-Parameter anpassen",
     "Scan Options" : "Scan-Optionen",
     "Scan aborted." : "Scan abgebrochen.",
     "Scan started." : "Scan gestartet.",
@@ -12,9 +12,9 @@ OC.L10N.register(
     "Yes" : "Ja",
     "File already exists" : "Datei bereits vorhanden",
     "Something went wrong while attempting to scan" : "Beim Versuch, einen Scan durchzuführen, ist etwas schief gelaufen",
-    "success" : "Erfolg",
+    "success" : "Erfolgreich",
     "Scanner" : "Scanner",
-    "Scanner app for Nextcloud using the SANE framework" : "Scanner-App für Nextcloud mit dem SANE-Framework",
-    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Fügt die Möglichkeit hinzu, Bilder von einem netzwerkfähigen oder lokalen Scanner zu erfassen. Sie benötigen eine funktionierende SANE-Konfiguration und einen unterstützten Scanner. Bitte lesen Sie die Readme, wie Sie diese App auf Ihrem System einrichten."
+    "Scanner app for Nextcloud using the SANE framework" : "Scanner-App für Nextcloud verwendet das SANE-Framework",
+    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Bietet die Möglichkeit, Bilder von einem netzwerkfähigen oder lokalen Scanner zu erfassen. Du benötigst eine funktionierende SANE-Konfiguration und einen unterstützten Scanner. Bitte das Readme lesen, wie Du diese App auf Deinem System einrichtest."
 },
 "nplurals=2; plural=(n != 1);");

@@ -1,4 +1,6 @@
 { "translations": {
+    "Scan Image" : "Сканировать изображение",
+    "Please adjust scan parameters" : "Пожалуйста, настройте параметры сканирования",
     "Scan Options" : "Настройки сканирования",
     "Scan aborted." : "Сканирование прервано.",
     "Scan started." : "Сканирование запущено.",
@@ -10,6 +12,7 @@
     "Something went wrong while attempting to scan" : "Что-то пошло не так при попытке сканирования",
     "success" : "Успешно",
     "Scanner" : "Сканер",
-    "Scanner app for Nextcloud using the SANE framework" : "Приложение сканера для Nextcloud с использованием фреймворка SANE"
+    "Scanner app for Nextcloud using the SANE framework" : "Приложение сканера для Nextcloud с использованием фреймворка SANE",
+    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Добавляет возможность получения изображений с сетевого или локального сканера. Вам нужна рабочая конфигурация SANE и поддерживаемый сканер. Пожалуйста, ознакомьтесь с инструкциями настройки этого приложение в вашей системе."
 },"pluralForm" :"nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);"
 }

@@ -20,7 +20,7 @@ var ScannerMenuPlugin = {
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {
-				plugin.scanOptionsModal(t('scanner', 'Please adjust scan parameters'), t('scanner', 'Scan Options'), function (result, formData) {
+				plugin.scanOptionsModal(t('scanner', 'Mode'), t('scanner', 'Color'), t('scanner', 'Greyscale'), t('scanner', 'Lineart'), t('scanner', 'Resolution'), t('scanner', 'Please adjust scan parameters'), t('scanner', 'Scan Options'), function (result, formData) {
 					if (!result) {
 						OC.Notification.showTemporary(t('scanner', 'Scan aborted.'));
 						return;
@@ -63,7 +63,7 @@ var ScannerMenuPlugin = {
 		return defer.promise();
 	},
 
-	scanOptionsModal: function (text, title, callback, modal) {
+	scanOptionsModal: function (mode, color, greyscale, lineart, resolution, text, title, callback, modal) {
 		var plugin = this;
 		return $.when(this.getTemplate('optionsdialog.html')).then(function ($tmpl) {
 			var dialogName = 'oc-dialog-' + OCdialogs.dialogsCounter + '-content';
@@ -72,6 +72,11 @@ var ScannerMenuPlugin = {
 				dialog_name: dialogName,
 				title: title,
 				message: text,
+				resolution: resolution,
+				mode: mode,
+				color: color,
+				greyscale: greyscale,
+				lineart: lineart,
 				type: 'notice'
 			});
 			if (modal === undefined) {

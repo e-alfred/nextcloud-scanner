@@ -1,13 +1,6 @@
-/**
- * Nextcloud - scanner
- *
- * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
- *
- * @author Greg Sutcliffe <nextcloud@emeraldreverie.org>
- * @copyright Greg Sutcliffe 2016
- */
+import {App} from "./app";
 
+__webpack_nonce__ = btoa(OC.requestToken);
 var ScannerMenuPlugin = {
 	attach: function (menu) {
 		var plugin = this;
@@ -20,7 +13,7 @@ var ScannerMenuPlugin = {
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {
-				plugin.scanOptionsModal(t('scanner', 'Mode'), t('scanner', 'Color'), t('scanner', 'Greyscale'), t('scanner', 'Lineart'), t('scanner', 'Resolution'), t('scanner', 'Please adjust scan parameters'), t('scanner', 'Scan Options'), function (result, formData) {
+				plugin.scanOptionsModal('', t('scanner','Scan Options'), function (result, formData) {
 					if (!result) {
 						OC.Notification.showTemporary(t('scanner', 'Scan aborted.'));
 						return;
@@ -62,27 +55,30 @@ var ScannerMenuPlugin = {
 			});
 		return defer.promise();
 	},
-
-	scanOptionsModal: function (mode, color, greyscale, lineart, resolution, text, title, callback, modal) {
+	px2mm: function (px, dpi) {
+		return Math.round((px / dpi) * 25.4);
+	},
+	mm2px: function (mm, dpi) {
+		return Math.round(mm / 25.4 * dpi);
+	},
+	scanOptionsModal: function (text, title, callback, modal) {
 		var plugin = this;
-		return $.when(this.getTemplate('optionsdialog.html')).then(function ($tmpl) {
+		return $.when(this.getTemplate('vue-dialog.html')).then(function ($tmpl) {
 			var dialogName = 'oc-dialog-' + OCdialogs.dialogsCounter + '-content';
 			var dialogId = '#' + dialogName;
 			var $dlg = $tmpl.octemplate({
 				dialog_name: dialogName,
 				title: title,
 				message: text,
-				resolution: resolution,
-				mode: mode,
-				color: color,
-				greyscale: greyscale,
-				lineart: lineart,
 				type: 'notice'
 			});
 			if (modal === undefined) {
 				modal = false;
 			}
 			$('body').append($dlg);
+			let app = new App(dialogId + '-vue');
+			app.start();
+
 
 			// wrap callback in _.once():
 			// only call callback once and not twice (button handler and close
@@ -92,20 +88,22 @@ var ScannerMenuPlugin = {
 			}
 
 			var buttonlist = [{
-				text: t('scanner', 'No'),
+				text: t('core', 'Abort'),
 				click: function () {
 					if (callback !== undefined) {
-						callback(false, plugin.formArrayToObject($('form', $dlg).serializeArray()));
+						callback(false, {});
 					}
-					$(dialogId).ocdialog(t('scanner', 'close'));
+					app.destroy();
+					$(dialogId).ocdialog('close');
 				}
 			}, {
-				text: t('scanner', 'Yes'),
+				text: t('core', 'Scan'),
 				click: function () {
 					if (callback !== undefined) {
-						callback(true, plugin.formArrayToObject($('form', $dlg).serializeArray()));
+						callback(true, app.getScanParams());
 					}
-					$(dialogId).ocdialog(t('scanner', 'close'));
+					app.destroy();
+					$(dialogId).ocdialog('close');
 				},
 				defaultButton: true
 			}
@@ -118,8 +116,9 @@ var ScannerMenuPlugin = {
 				close: function () {
 					// callback is already fired if Yes/No is clicked directly
 					if (callback !== undefined) {
-						callback(false, plugin.formArrayToObject($('form', $dlg).serializeArray()));
+						callback(false, {});
 					}
+					app.destroy();
 				}
 			});
 			OCdialogs.dialogsCounter++;

@@ -1,6 +1,13 @@
-import {App} from "./app";
+/**
+ * Nextcloud - scanner
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Greg Sutcliffe <nextcloud@emeraldreverie.org>
+ * @copyright Greg Sutcliffe 2016
+ */
 
-__webpack_nonce__ = btoa(OC.requestToken);
 var ScannerMenuPlugin = {
 	attach: function (menu) {
 		var plugin = this;
@@ -8,18 +15,18 @@ var ScannerMenuPlugin = {
 
 		menu.addMenuEntry({
 			id: 'scanner',
-			displayName: 'Scan Image',
+			displayName: t('scanner', 'Scan Image'),
 			templateName: 'scan.jpg',
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {
-				plugin.scanOptionsModal('', 'Scan Options', function (result, formData) {
+				plugin.scanOptionsModal(t('scanner', 'Mode'), t('scanner', 'Color'), t('scanner', 'Greyscale'), t('scanner', 'Lineart'), t('scanner', 'Resolution'), t('scanner', 'Please adjust scan parameters'), t('scanner', 'Scan Options'), function (result, formData) {
 					if (!result) {
-						OC.Notification.showTemporary('Scan aborted.');
+						OC.Notification.showTemporary(t('scanner', 'Scan aborted.'));
 						return;
 					}
 					var dir = fileList.getCurrentDirectory();
-					OC.Notification.showTemporary('Scan started.');
+					OC.Notification.showTemporary(t('scanner', 'Scan started.'));
 					$.ajax({
 						url: OC.generateUrl('/apps/scanner/scan'),
 						async: true,
@@ -31,7 +38,7 @@ var ScannerMenuPlugin = {
 						},
 						success: function (data) {
 							fileList.changeDirectory(dir, true, true);
-							OC.Notification.showTemporary('Scan complete');
+							OC.Notification.showTemporary(t('scanner', 'Scan complete'));
 						},
 						error: function (data) {
 							OC.Notification.showTemporary(data.result);
@@ -55,30 +62,27 @@ var ScannerMenuPlugin = {
 			});
 		return defer.promise();
 	},
-	px2mm: function (px, dpi) {
-		return Math.round((px / dpi) * 25.4);
-	},
-	mm2px: function (mm, dpi) {
-		return Math.round(mm / 25.4 * dpi);
-	},
-	scanOptionsModal: function (text, title, callback, modal) {
+
+	scanOptionsModal: function (mode, color, greyscale, lineart, resolution, text, title, callback, modal) {
 		var plugin = this;
-		return $.when(this.getTemplate('vue-dialog.html')).then(function ($tmpl) {
+		return $.when(this.getTemplate('optionsdialog.html')).then(function ($tmpl) {
 			var dialogName = 'oc-dialog-' + OCdialogs.dialogsCounter + '-content';
 			var dialogId = '#' + dialogName;
 			var $dlg = $tmpl.octemplate({
 				dialog_name: dialogName,
 				title: title,
 				message: text,
+				resolution: resolution,
+				mode: mode,
+				color: color,
+				greyscale: greyscale,
+				lineart: lineart,
 				type: 'notice'
 			});
 			if (modal === undefined) {
 				modal = false;
 			}
 			$('body').append($dlg);
-			let app = new App(dialogId + '-vue');
-			app.start();
-
 
 			// wrap callback in _.once():
 			// only call callback once and not twice (button handler and close
@@ -88,22 +92,20 @@ var ScannerMenuPlugin = {
 			}
 
 			var buttonlist = [{
-				text: t('core', 'Abort'),
+				text: t('scanner', 'No'),
 				click: function () {
 					if (callback !== undefined) {
-						callback(false, {});
+						callback(false, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					app.destroy();
-					$(dialogId).ocdialog('close');
+					$(dialogId).ocdialog(t('scanner', 'close'));
 				}
 			}, {
-				text: t('core', 'Scan'),
+				text: t('scanner', 'Yes'),
 				click: function () {
 					if (callback !== undefined) {
-						callback(true, app.getScanParams());
+						callback(true, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					app.destroy();
-					$(dialogId).ocdialog('close');
+					$(dialogId).ocdialog(t('scanner', 'close'));
 				},
 				defaultButton: true
 			}
@@ -116,9 +118,8 @@ var ScannerMenuPlugin = {
 				close: function () {
 					// callback is already fired if Yes/No is clicked directly
 					if (callback !== undefined) {
-						callback(false, {});
+						callback(false, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					app.destroy();
 				}
 			});
 			OCdialogs.dialogsCounter++;

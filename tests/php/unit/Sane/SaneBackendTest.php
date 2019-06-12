@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 
+use OCA\Scanner\Sane\Param\Whitelist\ArrayWhitelist;
+use OCA\Scanner\Sane\Param\Whitelist\ParamWhitelistFactory;
 use OCA\Scanner\Sane\SaneBackend;
 
 class SaneBackendTest extends PHPUnit_Framework_TestCase {
@@ -20,10 +22,19 @@ class SaneBackendTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider defaultTestData
 	 */
-	public function testAcceptsParamValue($shellOutput, $expectedId, $acceptedParamValues) {
-		$testee = SaneBackend::fromShellOutput($shellOutput);
+	public function testAcceptsParamValue($shellOutput, $expectedId, $acceptedParamValues, $rejectedParamValues) {
+		$whitelist = array_keys($acceptedParamValues);
+		$whitelistFactory = $this->createMock(ParamWhitelistFactory::class);
+		$paramWhitelist = new ArrayWhitelist($whitelist);
+		$whitelistFactory->method('forBackendId')->with($expectedId)->willReturn($paramWhitelist);
+		$testee = SaneBackend::fromShellOutput($shellOutput, $whitelistFactory);
 		foreach ($acceptedParamValues as $key => $value) {
 			$this->assertTrue($testee->acceptsParamValue($key, (string)$value), "Parameter:'{$key}', Value:'{$value}'");
+		}
+
+		foreach ($rejectedParamValues as $key => $value) {
+			$this->assertFalse($testee->acceptsParamValue($key, (string)$value), "Parameter:'{$key}', Value:'{$value}'");
+
 		}
 	}
 
@@ -60,9 +71,19 @@ All options specific to device `hpaio:/net/Officejet_7500_E910?ip=192.168.188.38
 
 ', 'hpaio:/net/Officejet_7500_E910?ip=192.168.188.38',
 			[
+				'l' => 210,
+				'resolution' => 100,
 				'brightness' => 250,
 				'mode' => 'Gray'
-			]];
+			],
+			[
+				'l' => 300,
+				'resolution' => 101,
+				'brightness' => 3000,
+				'compression' => 'nvkdjvejk',
+				'foo' => 'bar'
+			]
+		];
 		yield ['                                                                                                                                                                                                                                                                               
 All options specific to device `net:192.168.24.123:pixma\':                                                                                                                                                                                                       
   Scan mode:                                                                                                                                                                                                                                                                   
@@ -101,7 +122,7 @@ All options specific to device `net:192.168.24.123:pixma\':
 			'net:192.168.24.123:pixma',
 			[
 				'l' => 100
-			]
+			], []
 		];
 
 		yield ['
@@ -192,6 +213,6 @@ All options specific to device `plustek:libusb:002:002\':
     --button 4[=(yes|no)] [inactive]
         This option reflects the status of the scanner buttons.
 ', 'plustek:libusb:002:002',
-			[]];
+			[], []];
 	}
 }

@@ -9,6 +9,7 @@ use OCA\Scanner\Sane\Param\ListScanParam;
 use OCA\Scanner\Sane\Param\ScanParameterFactory;
 use OCA\Scanner\Sane\Param\ScanParamList;
 use OCA\Scanner\Sane\Param\ScanParamListInterface;
+use OCA\Scanner\Sane\Param\Whitelist\ParamWhitelistFactory;
 
 class SaneBackend {
 
@@ -44,7 +45,8 @@ class SaneBackend {
 	 * @return SaneBackend
 	 * @throws InvalidArgumentException
 	 */
-	public static function fromShellOutput(string $shellOutput): self {
+	public static function fromShellOutput(string $shellOutput, ParamWhitelistFactory $whitelistFactory = null): self {
+		$whitelistFactory = $whitelistFactory ?? new ParamWhitelistFactory();
 		preg_match('/`(.+)\'/', $shellOutput, $idMatch);
 		$id = $idMatch[1];
 		if (empty($id)) {
@@ -54,18 +56,9 @@ class SaneBackend {
 		list(, $parameterNames, $options, $defaults, $descriptions) = $matches;
 		$params = [];
 		$factory = new ScanParameterFactory();
-		array_walk($parameterNames, function ($name, $idx) use (&$params, $options, $descriptions, $defaults, $factory) {
-
-			/**
-			 * Remove some bogus params that are either deprecated or nonsensical.
-			 * Let's hope this won't lead to collisions between backends...
-			 */
-			$blacklist = [
-				'jpeg-quality'
-			];
-			if (\in_array($name, $blacklist, true)) {
-				return;
-			}
+		$whitelist = $whitelistFactory->forBackendId($id);
+		$parameterNames = array_filter($parameterNames, [$whitelist, 'isWhitelisted']);
+		array_walk($parameterNames, static function ($name, $idx) use (&$params, $options, $descriptions, $defaults, $factory) {
 			$params[] = $factory->create($name, $descriptions[$idx], $options[$idx], $defaults[$idx]);
 		});
 		$paramList = new ScanParamList($params);

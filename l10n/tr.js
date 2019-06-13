@@ -2,6 +2,11 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Görsel Tara",
+    "Mode" : "Kip",
+    "Color" : "Renk",
+    "Greyscale" : "Gri tonlamalı",
+    "Lineart" : "Tonlamasız çizim",
+    "Resolution" : "Çözünürlük",
     "Please adjust scan parameters" : "Lütfen tarama ayarlarını yapın",
     "Scan Options" : "Tarama Ayarları",
     "Scan aborted." : "Tarama iptal edildi.",

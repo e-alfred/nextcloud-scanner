@@ -2,6 +2,10 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Skenuoti paveikslą",
+    "Mode" : "Veiksena",
+    "Color" : "Spalva",
+    "Greyscale" : "Pilkumo tonai",
+    "Resolution" : "Raiška",
     "Please adjust scan parameters" : "Suderinkite skenavimo parametrus",
     "Scan Options" : "Skenavimo parinktys",
     "Scan aborted." : "Skenavimas nutrauktas.",

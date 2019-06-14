@@ -13,7 +13,9 @@
 			<!--</label>-->
 			<template
 					v-for="(params,name) in backends[selectedBackend].params">
-				<ScanParam :name="name" :params="params"></ScanParam>
+				<div v-if="params.visibleByDefault">
+					<ScanParam :name="name" :params="params"></ScanParam>
+				</div>
 			</template>
 		</section>
 		<section style="flex: 50%;padding:0 30px">

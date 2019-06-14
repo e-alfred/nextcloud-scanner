@@ -36,15 +36,16 @@ class ScanParamList implements ScanParamListInterface {
 
 	public function toArray(): array {
 		$arr = [];
-		foreach ($this->scanParams as $scanParam) {
-			if ($scanParam instanceof NullScanParam) {
+		foreach ($this->scanParams as $param) {
+			if ($param instanceof NullScanParam) {
 				continue;
 			}
-			$arr[$scanParam->name()] = [
-				'description' => $scanParam->description(),
-				'type' => $scanParam->type(),
-				'default' => $scanParam->defaultValue(),
-				'options' => $scanParam->options(),
+			$arr[$param->name()] = [
+				'description' => $param->description(),
+				'type' => $param->type(),
+				'default' => $param->defaultValue(),
+				'options' => $param->options(),
+				'visibleByDefault' => $param->visibleByDefault()
 			];
 		}
 		return $arr;

@@ -30,4 +30,8 @@ class NullScanParam implements ScanParam {
 	public function name(): string {
 		return '';
 	}
+
+	public function visibleByDefault(): bool {
+		return false;
+	}
 }

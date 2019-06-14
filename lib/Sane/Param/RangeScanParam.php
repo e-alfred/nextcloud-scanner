@@ -10,16 +10,21 @@ class RangeScanParam implements ScanParam {
 	private $description;
 	private $options;
 	private $default;
+	/**
+	 * @var bool
+	 */
+	private $visibleByDefault;
 
-	public function __construct(string $name, string $description, string $optionString, string $default) {
+	public function __construct(string $name, string $description, string $optionString, string $default, bool $visibleByDefault) {
 
 		$this->name = $name;
 		$this->description = $description;
-		$this->options = array_map(function ($value) {
+		$this->options = array_map(static function ($value) {
 			return preg_replace('/[^0-9.\-]/', '', $value);
 		},
 			explode('..', $optionString));
 		$this->default = $default;
+		$this->visibleByDefault = $visibleByDefault;
 	}
 
 	public function accepts(string $value): bool {
@@ -44,5 +49,9 @@ class RangeScanParam implements ScanParam {
 
 	public function name(): string {
 		return $this->name;
+	}
+
+	public function visibleByDefault(): bool {
+		return $this->visibleByDefault;
 	}
 }

@@ -42,6 +42,7 @@ class SaneBackend {
 
 	/**
 	 * @param string $shellOutput
+	 * @param ParamWhitelistFactory|null $whitelistFactory
 	 * @return SaneBackend
 	 * @throws InvalidArgumentException
 	 */
@@ -57,9 +58,8 @@ class SaneBackend {
 		$params = [];
 		$factory = new ScanParameterFactory();
 		$whitelist = $whitelistFactory->forBackendId($id);
-		$parameterNames = array_filter($parameterNames, [$whitelist, 'isWhitelisted']);
-		array_walk($parameterNames, static function ($name, $idx) use (&$params, $options, $descriptions, $defaults, $factory) {
-			$params[] = $factory->create($name, $descriptions[$idx], $options[$idx], $defaults[$idx]);
+		array_walk($parameterNames, static function ($name, $idx) use (&$params, $options, $descriptions, $defaults, $factory, $whitelist) {
+			$params[] = $factory->create($name, $descriptions[$idx], $options[$idx], $defaults[$idx], $whitelist->isWhitelisted($name));
 		});
 		$paramList = new ScanParamList($params);
 

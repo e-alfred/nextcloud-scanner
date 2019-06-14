@@ -10,8 +10,12 @@ class ListScanParam implements ScanParam {
 	private $description;
 	private $options;
 	private $default;
+	/**
+	 * @var bool
+	 */
+	private $visibleByDefault;
 
-	public function __construct(string $name, string $description, string $optionString, string $default) {
+	public function __construct(string $name, string $description, string $optionString, string $default, bool $visibleByDefault) {
 
 		$this->name = $name;
 		$this->description = $description;
@@ -21,6 +25,7 @@ class ListScanParam implements ScanParam {
 		$this->options = array_filter(explode('|', $optionString));
 
 		$this->default = $default;
+		$this->visibleByDefault = $visibleByDefault;
 	}
 
 	/**
@@ -61,5 +66,9 @@ class ListScanParam implements ScanParam {
 
 	public function name(): string {
 		return $this->name;
+	}
+
+	public function  visibleByDefault(): bool {
+		return $this->visibleByDefault;
 	}
 }

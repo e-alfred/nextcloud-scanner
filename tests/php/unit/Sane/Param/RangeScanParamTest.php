@@ -13,7 +13,8 @@ class RangeScanParamTest extends PHPUnit_Framework_TestCase {
 			'hurr',
 			'durr',
 			$optionString,
-			'herp'
+			'herp',
+			true
 		);
 		$options = $testee->options();
 		$this->assertSame(array_values($expected), array_values($options));

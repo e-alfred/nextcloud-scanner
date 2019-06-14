@@ -10,7 +10,8 @@ class ScanParameterFactory {
 		string $name,
 		string $description,
 		string $optionString,
-		string $default
+		string $default,
+		bool $visibleByDefault
 
 	): ScanParam {
 		/**
@@ -28,9 +29,9 @@ class ScanParameterFactory {
 		}
 		switch (true) {
 			case $this->isList($optionString):
-				return new ListScanParam($name, $description, $optionString, $default);
+				return new ListScanParam($name, $description, $optionString, $default, $visibleByDefault);
 			case $this->isRange($optionString):
-				return new RangeScanParam($name, $description, $optionString, $default);
+				return new RangeScanParam($name, $description, $optionString, $default, $visibleByDefault);
 			default:
 				return new NullScanParam();
 

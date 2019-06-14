@@ -16,4 +16,6 @@ interface ScanParam {
 	public function description(): string;
 
 	public function type(): string;
+
+	public function visibleByDefault(): bool;
 }

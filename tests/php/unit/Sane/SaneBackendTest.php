@@ -81,7 +81,7 @@ All options specific to device `hpaio:/net/Officejet_7500_E910?ip=192.168.188.38
 				'resolution' => 101,
 				'brightness' => 3000,
 				'compression' => 'nvkdjvejk',
-				'foo' => 'bar'
+				'foo' => 'bar',
 			]
 		];
 		yield ['                                                                                                                                                                                                                                                                               

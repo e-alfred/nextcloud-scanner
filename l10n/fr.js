@@ -2,6 +2,10 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Scanner une image",
+    "Mode" : "Mode",
+    "Color" : "Couleur",
+    "Greyscale" : "Niveaux de gris",
+    "Resolution" : "Résolution",
     "Please adjust scan parameters" : "Veuillez ajuster les paramètres de scan",
     "Scan Options" : "Options de numérisation",
     "Scan aborted." : "Scan annulé.",

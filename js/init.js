@@ -9,7 +9,7 @@ var ScannerMenuPlugin = {
 		menu.addMenuEntry({
 			id: 'scanner',
 			displayName: t('scanner', 'Scan Image'),
-			templateName: 'scan.jpg',
+			templateName: t('scanner', 'Scanned on ') + ' ' + (new Date()).toLocaleDateString().replace(/\//g,'-'),
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {

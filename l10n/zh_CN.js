@@ -2,6 +2,11 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "扫描图片",
+    "Mode" : "模式",
+    "Color" : "颜色",
+    "Greyscale" : "灰阶",
+    "Lineart" : "艺术线条",
+    "Resolution" : "解析度",
     "Please adjust scan parameters" : "请调整扫描参数",
     "Scan Options" : "扫描选项",
     "Scan aborted." : "扫描失败中止。",

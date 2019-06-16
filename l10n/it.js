@@ -5,6 +5,7 @@ OC.L10N.register(
     "Mode" : "Modalità",
     "Color" : "Colore",
     "Greyscale" : "Scala di grigi",
+    "Lineart" : "Lineart",
     "Resolution" : "Risoluzione",
     "Please adjust scan parameters" : "Regola i parametri di scansione",
     "Scan Options" : "Opzioni di scansione",

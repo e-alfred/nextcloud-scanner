@@ -97,7 +97,7 @@ var ScannerMenuPlugin = {
 					if (callback !== undefined) {
 						callback(false, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					$(dialogId).ocdialog(t('scanner', 'close'));
+					$(dialogId).ocdialog('close');
 				}
 			}, {
 				text: t('scanner', 'Yes'),
@@ -105,7 +105,7 @@ var ScannerMenuPlugin = {
 					if (callback !== undefined) {
 						callback(true, plugin.formArrayToObject($('form', $dlg).serializeArray()));
 					}
-					$(dialogId).ocdialog(t('scanner', 'close'));
+					$(dialogId).ocdialog('close');
 				},
 				defaultButton: true
 			}

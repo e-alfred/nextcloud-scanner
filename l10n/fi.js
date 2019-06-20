@@ -7,7 +7,6 @@ OC.L10N.register(
     "Scan started." : "Skannaus aloitettu.",
     "Scan complete" : "Skannaus valmistui",
     "No" : "Ei",
-    "close" : "sulje",
     "Yes" : "Kyllä",
     "File already exists" : "Tiedosto on jo olemassa",
     "Something went wrong while attempting to scan" : "Jokin meni vikaan skannausta yrittäessä",

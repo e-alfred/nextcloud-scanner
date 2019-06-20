@@ -13,7 +13,6 @@ OC.L10N.register(
     "Scan started." : "Scan gestartet.",
     "Scan complete" : "Scan abgeschlossen",
     "No" : "Nein",
-    "close" : "Schließen",
     "Yes" : "Ja",
     "File already exists" : "Datei bereits vorhanden",
     "Something went wrong while attempting to scan" : "Beim Versuch, einen Scan durchzuführen, ist etwas schief gelaufen",

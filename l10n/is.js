@@ -8,7 +8,6 @@ OC.L10N.register(
     "Scan started." : "Skönnun hafin.",
     "Scan complete" : "Skönnun lokið",
     "No" : "Nei",
-    "close" : "loka",
     "Yes" : "Já",
     "File already exists" : "Skrá er þegar til staðar",
     "Something went wrong while attempting to scan" : "Eitthvað fór úrskeiðis þegar reynt var að skanna",

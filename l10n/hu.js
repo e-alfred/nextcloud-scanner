@@ -8,7 +8,6 @@ OC.L10N.register(
     "Scan started." : "Szkennelés elindítva.",
     "Scan complete" : "Szkennelés kész",
     "No" : "Nem",
-    "close" : "bezárás",
     "Yes" : "Igen",
     "File already exists" : "A fájl már létezik",
     "Something went wrong while attempting to scan" : "Valami balul sült el a szkennelés megpróbálásakor",

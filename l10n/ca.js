@@ -8,7 +8,6 @@ OC.L10N.register(
     "Scan started." : "Escaneig engegat.",
     "Scan complete" : "Escaneig completat",
     "No" : "No",
-    "close" : "tanca",
     "Yes" : "Sí",
     "File already exists" : "El fitxer ja existeix",
     "Something went wrong while attempting to scan" : "Alguna cosa ha anat malament mentre es provava d'escanejar",

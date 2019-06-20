@@ -13,7 +13,6 @@ OC.L10N.register(
     "Scan started." : "Tarama başlatıldı.",
     "Scan complete" : "Tarama tamamlandı",
     "No" : "Hayır",
-    "close" : "kapat",
     "Yes" : "Evet",
     "File already exists" : "Dosya zaten var",
     "Something went wrong while attempting to scan" : "Taranmaya çalışılırken bir şeyler ters gitti",

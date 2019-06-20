@@ -12,7 +12,6 @@ OC.L10N.register(
     "Scan started." : "Skenavimas pradėtas.",
     "Scan complete" : "Skenavimas užbaigtas",
     "No" : "Ne",
-    "close" : "užverti",
     "Yes" : "Taip",
     "File already exists" : "Failas jau yra",
     "Something went wrong while attempting to scan" : "Bandant skenuoti, kažkas nutiko",

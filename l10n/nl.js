@@ -11,7 +11,6 @@ OC.L10N.register(
     "Scan started." : "Scan gestart.",
     "Scan complete" : "Scan gereed",
     "No" : "Nee",
-    "close" : "sluiten",
     "Yes" : "Ja",
     "File already exists" : "Bestand bestaat al",
     "Something went wrong while attempting to scan" : "Er ging iets mis tijdens een poging om te scannen",

@@ -13,7 +13,6 @@ OC.L10N.register(
     "Scan started." : "扫描开始。",
     "Scan complete" : "扫描完成",
     "No" : "否",
-    "close" : "关闭",
     "Yes" : "是",
     "File already exists" : "文件已存在",
     "Something went wrong while attempting to scan" : "尝试扫描时出错",

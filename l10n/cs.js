@@ -8,7 +8,6 @@ OC.L10N.register(
     "Scan started." : "Skenování zahájeno.",
     "Scan complete" : "Skenování dokončeno",
     "No" : "Ne",
-    "close" : "zavřít",
     "Yes" : "Ano",
     "File already exists" : "Soubor už existuje",
     "Something went wrong while attempting to scan" : "Při pokusu o skenování se něco pokazilo",

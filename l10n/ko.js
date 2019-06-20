@@ -8,7 +8,6 @@ OC.L10N.register(
     "Scan started." : "스캔을 시작했습니다.",
     "Scan complete" : "스캔 완료",
     "No" : "아니요",
-    "close" : "닫기",
     "Yes" : "예",
     "File already exists" : "파일이 이미 존재함",
     "Something went wrong while attempting to scan" : "스캔을 시도하는 중 오류 발생",

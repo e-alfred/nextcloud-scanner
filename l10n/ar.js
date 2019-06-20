@@ -8,7 +8,6 @@ OC.L10N.register(
     "Scan started." : "بدء المسح.",
     "Scan complete" : "تم المسح",
     "No" : "لا",
-    "close" : "إغلاق",
     "Yes" : "نعم",
     "File already exists" : "الملف موجود مسبقاً",
     "Something went wrong while attempting to scan" : "حدث خطأ ما عند محاولة المسح",

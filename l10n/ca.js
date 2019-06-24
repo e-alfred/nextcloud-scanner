@@ -2,6 +2,11 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Escaneja Imatge",
+    "Mode" : "Mode",
+    "Color" : "Color",
+    "Greyscale" : "Escala de grisos",
+    "Lineart" : "Lineart",
+    "Resolution" : "Resolució",
     "Please adjust scan parameters" : "Si us plau, ajusteu els paràmetres de l'escaneig",
     "Scan Options" : "Opcions d'Escaneig",
     "Scan aborted." : "Escaneig avortat.",

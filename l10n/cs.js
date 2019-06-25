@@ -2,6 +2,10 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Naskenovat obrázek",
+    "Mode" : "Režim",
+    "Color" : "Barva",
+    "Greyscale" : "Stupně šedé",
+    "Resolution" : "Rozlišení",
     "Please adjust scan parameters" : "Upravte parametry skenování",
     "Scan Options" : "Možnosti skenování",
     "Scan aborted." : "Skenování přerušeno.",

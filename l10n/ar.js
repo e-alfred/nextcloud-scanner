@@ -2,6 +2,7 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "مسح صورة",
+    "Color" : "اللون",
     "Please adjust scan parameters" : "يرجى ضبط مُعامِلات المسح",
     "Scan Options" : "خيارات المسح",
     "Scan aborted." : "أجهض المسح.",

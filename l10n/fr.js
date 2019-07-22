@@ -5,6 +5,7 @@ OC.L10N.register(
     "Mode" : "Mode",
     "Color" : "Couleur",
     "Greyscale" : "Niveaux de gris",
+    "Lineart" : "Dessin au trait",
     "Resolution" : "Résolution",
     "Please adjust scan parameters" : "Veuillez ajuster les paramètres de scan",
     "Scan Options" : "Options de numérisation",

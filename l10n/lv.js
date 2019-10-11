@@ -2,6 +2,7 @@ OC.L10N.register(
     "scanner",
     {
     "Color" : "Krāsa",
+    "Resolution" : "Izšķirtspēja",
     "No" : "Nē",
     "Yes" : "Jā"
 },

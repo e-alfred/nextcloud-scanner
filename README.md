@@ -7,8 +7,8 @@ Nextcloud.
 ## Installation
 
 * Place the code in [your nextcloud folder]/apps/scanner
-* Make sure you have `scanimage` and `pnmtojpeg` binaries available
-  * On Debian, these are provided by the `sane-utils` and `netpbm` packages
+* Make sure you have the `scanimage` binary available
+  * On Debian, it is usually provided by the `sane-utils` package
 * Ensure executing `scanimage -L` on your NextCloud server returns the correct scanner
   * Configuring SANE is beyond this README, but:
     * For scanners shared by another host, add the hostname to /etc/sane.d/net.conf
@@ -37,13 +37,9 @@ The app will then call `scanimage` to get a scan, and save the resulting image w
 
 ## Known Issues
 
-* Pressing `Enter` after entering a filename will appear to do nothing
-  * This is because scanning is a slow process and no spinner is yet implemented
 * Only the default scanner is used for `scanimage`
   * If you have more than one scanner, scanimage will only use the first
-* Files view does not refresh to show the scanned file
-  * As a workaround, reload the page or change folder and then come back
-
+  
 More issues / roadmap details in the [TODO](TODO.md) file
 
 ## License / Copyright

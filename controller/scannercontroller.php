@@ -49,6 +49,8 @@ class ScannerController extends Controller {
 	 * @return DataResponse
 	 */
 	public function scan($filename, $dir, $scanOptions) {
+		$status = Http::STATUS_OK; 
+		$result = 'result';
 		$path = $dir . '/' . $filename;
 		$mode = (int)$scanOptions['mode'];
 		$resolution = (int)$scanOptions['resolution'];

@@ -16,7 +16,7 @@
     "Something went wrong while attempting to scan" : "掃描時發生錯誤",
     "success" : "成功",
     "Scanner" : "掃描器",
-    "Scanner app for Nextcloud using the SANE framework" : "Scanner app使用SANE架構",
-    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "這個附加元件讓您擁有從網路上下載，或是由您的掃描器輸入影像的功能\n您必須有設定好並支援SANE架構的掃描器\n請查看readme檔案了解如何設定此附加功能"
+    "Scanner app for Nextcloud using the SANE framework" : "掃描器應用程式使用 SANE 架構",
+    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "這個應用程式讓您能夠從網路中上傳掃描文件，或使用電腦上傳掃描文件。\n您必須有設定好並支援 SANE 架構的掃描器\n請查看 readme 文件了解如何設定此應用程式。"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

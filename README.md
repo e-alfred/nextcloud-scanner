@@ -7,8 +7,8 @@ Nextcloud.
 ## Installation
 
 * Place the code in [your nextcloud folder]/apps/scanner
-* Make sure you have the `scanimage` binary available
-  * On Debian, it is usually provided by the `sane-utils` package
+* Make sure you have `scanimage` and `pnmtojpeg` binaries available
+  * On Debian, these are provided by the `sane-utils` and `netpbm` packages
 * Ensure executing `scanimage -L` on your NextCloud server returns the correct scanner
   * Configuring SANE is beyond this README, but:
     * For scanners shared by another host, add the hostname to /etc/sane.d/net.conf
@@ -39,12 +39,13 @@ The app will then call `scanimage` to get a scan, and save the resulting image w
 
 * Only the default scanner is used for `scanimage`
   * If you have more than one scanner, scanimage will only use the first
-  
-More issues / roadmap details in the [TODO](TODO.md) file
+
+More issues / roadmap details can be found in the [TODO](TODO.md) file
 
 ## License / Copyright
 
-Copyright (c) 2016 Greg Sutcliffe
+Copyright (c) 2016 Greg Sutcliffe (Original author)
+Copyright (c) 2016 e-alfred
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by

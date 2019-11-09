@@ -66,7 +66,7 @@ var ScannerMenuPlugin = {
 	scanOptionsModal: function (mode, color, greyscale, lineart, resolution, text, title, callback, modal) {
 		var plugin = this;
 		return $.when(this.getTemplate('optionsdialog.html')).then(function ($tmpl) {
-			var dialogName = 'oc-dialog-' + OCdialogs.dialogsCounter + '-content';
+			var dialogName = 'oc-dialog-' + OC.dialogs.dialogsCounter + '-content';
 			var dialogId = '#' + dialogName;
 			var $dlg = $tmpl.octemplate({
 				dialog_name: dialogName,
@@ -122,7 +122,7 @@ var ScannerMenuPlugin = {
 					}
 				}
 			});
-			OCdialogs.dialogsCounter++;
+			OC.dialogs.dialogsCounter++;
 		});
 	},
 	formArrayToObject: function (formArray) {

@@ -57,7 +57,7 @@ class ScannerStorage {
 		$file = $this->storage->newFile($name);
 		// TODO: There's probably a way to stream this without the tempfile
 		exec(
-			"sudo scanimage --format=jpeg --mode {$this->modes[$mode]} --resolution {$resolution} > /tmp/img",
+			"sudo scanimage --mode {$this->modes[$mode]} --resolution {$resolution} -x 215 -y 297| pnmtojpeg > /tmp/img",
 			$output,
 			$status
 		);

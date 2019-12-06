@@ -2,6 +2,8 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Skanna mynd",
+    "Mode" : "Hamur",
+    "Color" : "Litur",
     "Please adjust scan parameters" : "Breyttu stillingum fyrir skönnunina",
     "Scan Options" : "Valkostir skönnunar",
     "Scan aborted." : "Hætt var við skönnun.",

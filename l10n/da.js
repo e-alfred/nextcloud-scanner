@@ -2,6 +2,7 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Skan billede",
+    "Color" : "Farve",
     "Please adjust scan parameters" : "Justér venligst skan konfigurationer",
     "Scan Options" : "Skan indstillinger",
     "Scan aborted." : "Skanning afbrudt.",

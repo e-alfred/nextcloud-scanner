@@ -2,6 +2,7 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Просканувати картинку",
+    "Color" : "Колір",
     "Please adjust scan parameters" : "Будь ласка налаштуйте параметри сканування",
     "Scan Options" : "Опції сканування",
     "Scan aborted." : "Сканування відмінено",

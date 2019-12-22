@@ -2,6 +2,8 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Kép szkennelése",
+    "Mode" : "Mód",
+    "Color" : "Szín",
     "Please adjust scan parameters" : "Módosítsa a szkennelési paramétereket",
     "Scan Options" : "Szkennelési beállítások",
     "Scan aborted." : "Szkennelés megszakítva.",

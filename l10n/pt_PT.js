@@ -2,6 +2,7 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Digitalizar Imagem",
+    "Color" : "Cor",
     "Please adjust scan parameters" : "Por favor, ajuste os parâmetros da digitalização",
     "Scan Options" : "Opções de Digitalização",
     "Scan aborted." : "Digitalização abortada.",

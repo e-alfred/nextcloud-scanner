@@ -2,6 +2,8 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Skannaa kuva",
+    "Mode" : "Tila",
+    "Color" : "Väri",
     "Scan Options" : "Skannausvalinnat",
     "Scan aborted." : "Skannaus peruttu.",
     "Scan started." : "Skannaus aloitettu.",

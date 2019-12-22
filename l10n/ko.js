@@ -2,6 +2,8 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "그림 스캔",
+    "Mode" : "모드",
+    "Color" : "색",
     "Please adjust scan parameters" : "스캔 인자를 조정하십시오",
     "Scan Options" : "스캔 옵션",
     "Scan aborted." : "스캔이 중단되었습니다.",

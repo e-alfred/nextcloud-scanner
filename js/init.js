@@ -130,7 +130,7 @@ var ScannerMenuPlugin = {
 					app.destroy();
 				}
 			});
-			OCdialogs.dialogsCounter++;
+			OC.dialogs.dialogsCounter++;
 		});
 	},
 	formArrayToObject: function (formArray) {

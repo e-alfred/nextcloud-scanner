@@ -1,0 +1,8 @@
+{ "translations": {
+    "Mode" : "Modus",
+    "Color" : "Farge",
+    "No" : "Nei",
+    "Yes" : "Ja",
+    "File already exists" : "Filen finnes allerede"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

@@ -1,0 +1,7 @@
+{ "translations": {
+    "Color" : "Color",
+    "No" : "No",
+    "Yes" : "Sí",
+    "File already exists" : "El archivo ya existe"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

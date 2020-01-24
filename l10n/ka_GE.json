@@ -1,0 +1,8 @@
+{ "translations": {
+    "Mode" : "რეჟიმი",
+    "Color" : "ფერი",
+    "No" : "არა",
+    "Yes" : "კი",
+    "File already exists" : "ფაილი უკვე არსებობს"
+},"pluralForm" :"nplurals=2; plural=(n!=1);"
+}

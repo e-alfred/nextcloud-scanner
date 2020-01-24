@@ -1,11 +1,12 @@
 { "translations": {
     "Scan Image" : "Skannaa kuva",
+    "Mode" : "Tila",
+    "Color" : "Väri",
     "Scan Options" : "Skannausvalinnat",
     "Scan aborted." : "Skannaus peruttu.",
     "Scan started." : "Skannaus aloitettu.",
     "Scan complete" : "Skannaus valmistui",
     "No" : "Ei",
-    "close" : "sulje",
     "Yes" : "Kyllä",
     "File already exists" : "Tiedosto on jo olemassa",
     "Something went wrong while attempting to scan" : "Jokin meni vikaan skannausta yrittäessä",

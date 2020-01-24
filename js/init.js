@@ -1,3 +1,12 @@
+/**
+ * Nextcloud - scanner
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Greg Sutcliffe <nextcloud@emeraldreverie.org>
+ * @copyright Greg Sutcliffe 2016
+ */
 import {App} from "./app";
 
 __webpack_nonce__ = btoa(OC.requestToken);
@@ -64,7 +73,7 @@ var ScannerMenuPlugin = {
 	scanOptionsModal: function (text, title, callback, modal) {
 		var plugin = this;
 		return $.when(this.getTemplate('vue-dialog.html')).then(function ($tmpl) {
-			var dialogName = 'oc-dialog-' + OCdialogs.dialogsCounter + '-content';
+			var dialogName = 'oc-dialog-' + OC.dialogs.dialogsCounter + '-content';
 			var dialogId = '#' + dialogName;
 			var $dlg = $tmpl.octemplate({
 				dialog_name: dialogName,

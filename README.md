@@ -37,18 +37,15 @@ The app will then call `scanimage` to get a scan, and save the resulting image w
 
 ## Known Issues
 
-* Pressing `Enter` after entering a filename will appear to do nothing
-  * This is because scanning is a slow process and no spinner is yet implemented
 * Only the default scanner is used for `scanimage`
   * If you have more than one scanner, scanimage will only use the first
-* Files view does not refresh to show the scanned file
-  * As a workaround, reload the page or change folder and then come back
 
-More issues / roadmap details in the [TODO](TODO.md) file
+More issues / roadmap details can be found in the [TODO](TODO.md) file
 
 ## License / Copyright
 
-Copyright (c) 2016 Greg Sutcliffe
+Copyright (c) 2016 Greg Sutcliffe (Original author)
+Copyright (c) 2016 e-alfred
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by

@@ -81,7 +81,8 @@ class ScannerController extends Controller {
 		$backend = $this->getBackendCollection()->getByIndex(0);
 		$scanOptions = (array)$scanOptions;
 		$scanArgs = new ScanCommandArgs($scanOptions, $backend);
-
+        $status = Http::STATUS_OK;
+        $result = 'result';
 		$path = $dir . '/' . $filename;
 
 		try {

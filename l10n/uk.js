@@ -2,7 +2,11 @@ OC.L10N.register(
     "scanner",
     {
     "Scan Image" : "Просканувати картинку",
+    "Mode" : "Режим",
     "Color" : "Колір",
+    "Greyscale" : "Відтінки сірого",
+    "Lineart" : "Лінійний",
+    "Resolution" : "Роздільна здатність",
     "Please adjust scan parameters" : "Будь ласка налаштуйте параметри сканування",
     "Scan Options" : "Опції сканування",
     "Scan aborted." : "Сканування відмінено",

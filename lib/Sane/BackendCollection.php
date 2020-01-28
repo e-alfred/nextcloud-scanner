@@ -28,7 +28,10 @@ class BackendCollection
     {
         $backendIds = [];
         foreach ($shellOutput as $line) {
-            preg_match('/`(.*)\'/', $line, $matches);
+            $success = preg_match('/`(.*)\'/', $line, $matches);
+            if (!$success) {
+                continue;
+            }
             if (!$matches[1]) {
                 continue;
             }

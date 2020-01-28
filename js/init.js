@@ -18,7 +18,7 @@ var ScannerMenuPlugin = {
 		menu.addMenuEntry({
 			id: 'scanner',
 			displayName: t('scanner', 'Scan Image'),
-			templateName: t('scanner', 'Scanned on ') + ' ' + (new Date()).toLocaleDateString().replace(/\//g,'-'),
+			templateName: t('scanner', 'Scanned on ') + ' ' + (new Date()).toLocaleDateString().replace(/\//g,'-') + '.jpg',
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {

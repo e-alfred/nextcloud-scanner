@@ -53,7 +53,7 @@ class SaneBackend {
 		if (empty($id)) {
 			throw new InvalidArgumentException('ID could not be determined from input string: ' . $shellOutput);
 		}
-		preg_match_all('/\s+--?(\S+)\s(\S*)\s+\[(\S*?)\].*\n(.+)\n/', $shellOutput, $matches);
+		preg_match_all('/\s+--?(\S+)(?:\s|\[=)(\S*)\]?.+\[(\S*?)\].*\n(.+)\n/', $shellOutput, $matches);
 		list(, $parameterNames, $options, $defaults, $descriptions) = $matches;
 		$params = [];
 		$factory = new ScanParameterFactory();

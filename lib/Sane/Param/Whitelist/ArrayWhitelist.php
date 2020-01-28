@@ -9,14 +9,14 @@ class ArrayWhitelist implements ParamWhitelist {
 	/**
 	 * @var array
 	 */
-	private $blacklist;
+	private $whitelist;
 
-	public function __construct(array $blacklist = []) {
+	public function __construct(array $whitelist = []) {
 
-		$this->blacklist = $blacklist;
+		$this->whitelist = $whitelist;
 	}
 
 	public function isWhitelisted(string $name): bool {
-		return in_array($name, $this->blacklist, true);
+		return in_array($name, $this->whitelist, true);
 	}
 }

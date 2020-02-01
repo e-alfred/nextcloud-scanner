@@ -1,4 +1,5 @@
 { "translations": {
+    "Mode" : "حالت",
     "No" : "نه",
     "Yes" : "بله"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"

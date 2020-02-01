@@ -1,6 +1,7 @@
 OC.L10N.register(
     "scanner",
     {
+    "Mode" : "حالت",
     "No" : "نه",
     "Yes" : "بله"
 },

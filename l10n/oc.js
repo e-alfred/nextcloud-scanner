@@ -1,7 +1,16 @@
 OC.L10N.register(
     "scanner",
     {
-    "No" : "No",
-    "Yes" : "Yes"
+    "Scan Image" : "Numerizar imatge",
+    "Mode" : "Mòde",
+    "Color" : "Color",
+    "Greyscale" : "Nivèls de gris",
+    "Resolution" : "Resolucion",
+    "Scan Options" : "Opcions de numerizacion",
+    "Scan aborted." : "Numerizacion arrestada.",
+    "Scan started." : "Numerizacion lançada.",
+    "Scan complete" : "Numerizacion acabada",
+    "No" : "Non",
+    "Yes" : "Òc"
 },
 "nplurals=2; plural=(n > 1);");

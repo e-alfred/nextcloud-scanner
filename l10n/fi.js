@@ -4,6 +4,8 @@ OC.L10N.register(
     "Scan Image" : "Skannaa kuva",
     "Mode" : "Tila",
     "Color" : "Väri",
+    "Greyscale" : "Harmaasävy",
+    "Resolution" : "Resoluutio",
     "Scan Options" : "Skannausvalinnat",
     "Scan aborted." : "Skannaus peruttu.",
     "Scan started." : "Skannaus aloitettu.",

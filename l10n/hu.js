@@ -4,6 +4,8 @@ OC.L10N.register(
     "Scan Image" : "Kép szkennelése",
     "Mode" : "Mód",
     "Color" : "Szín",
+    "Greyscale" : "Szürkeárnyalat",
+    "Resolution" : "Felbontás",
     "Please adjust scan parameters" : "Módosítsa a szkennelési paramétereket",
     "Scan Options" : "Szkennelési beállítások",
     "Scan aborted." : "Szkennelés megszakítva.",

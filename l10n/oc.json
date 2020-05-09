@@ -9,6 +9,7 @@
     "Scan started." : "Numerizacion lançada.",
     "Scan complete" : "Numerizacion acabada",
     "No" : "Non",
-    "Yes" : "Òc"
+    "Yes" : "Òc",
+    "Scanner" : "Numerizador"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

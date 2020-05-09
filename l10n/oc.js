@@ -11,6 +11,7 @@ OC.L10N.register(
     "Scan started." : "Numerizacion lançada.",
     "Scan complete" : "Numerizacion acabada",
     "No" : "Non",
-    "Yes" : "Òc"
+    "Yes" : "Òc",
+    "Scanner" : "Numerizador"
 },
 "nplurals=2; plural=(n > 1);");

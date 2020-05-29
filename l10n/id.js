@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Color" : "Warna",
     "No" : "Tidak",
-    "Yes" : "Ya"
+    "Yes" : "Ya",
+    "File already exists" : "Berkas sudah ada"
 },
 "nplurals=1; plural=0;");

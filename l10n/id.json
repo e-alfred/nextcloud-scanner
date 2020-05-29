@@ -1,6 +1,7 @@
 { "translations": {
     "Color" : "Warna",
     "No" : "Tidak",
-    "Yes" : "Ya"
+    "Yes" : "Ya",
+    "File already exists" : "Berkas sudah ada"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

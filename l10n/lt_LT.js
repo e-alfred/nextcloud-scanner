@@ -5,6 +5,7 @@ OC.L10N.register(
     "Mode" : "Veiksena",
     "Color" : "Spalva",
     "Greyscale" : "Pilkumo tonai",
+    "Lineart" : "Linijinis",
     "Resolution" : "Raiška",
     "Please adjust scan parameters" : "Suderinkite skenavimo parametrus",
     "Scan Options" : "Skenavimo parinktys",

@@ -5,6 +5,7 @@ OC.L10N.register(
     "Mode" : "Mód",
     "Color" : "Szín",
     "Greyscale" : "Szürkeárnyalat",
+    "Lineart" : "Vonalábra",
     "Resolution" : "Felbontás",
     "Please adjust scan parameters" : "Módosítsa a szkennelési paramétereket",
     "Scan Options" : "Szkennelési beállítások",

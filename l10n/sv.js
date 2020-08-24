@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Mode" : "Läge",
     "Color" : "Färg",
+    "Greyscale" : "Gråskala",
     "No" : "Nej",
     "Yes" : "Ja",
     "File already exists" : "Filen finns redan"

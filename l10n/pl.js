@@ -6,7 +6,7 @@ OC.L10N.register(
     "Color" : "Kolor",
     "Greyscale" : "Skala szarości",
     "Lineart" : "Grafika liniowa",
-    "Resolution" : "Rozkład",
+    "Resolution" : "Rozdzielczość",
     "Please adjust scan parameters" : "Dostosuj parametry skanowania",
     "Scan Options" : "Opcje skanowania",
     "Scan aborted." : "Skanowanie przerwane.",

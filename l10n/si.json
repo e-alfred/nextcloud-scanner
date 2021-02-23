@@ -1,5 +1,6 @@
 { "translations": {
     "No" : "නැහැ",
-    "Yes" : "ඔව්"
+    "Yes" : "ඔව්",
+    "File already exists" : "ගොනුව දැනටමත් පවතී"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

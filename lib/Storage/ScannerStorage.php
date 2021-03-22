@@ -66,7 +66,7 @@ class ScannerStorage {
 		}
 		$data = file_get_contents('/tmp/img');
 		$file->putContent($data);
-		return $this->trans->t('success');
+		return $this->trans->t('Success');
 	}
 
 }

@@ -16,7 +16,6 @@ OC.L10N.register(
     "Yes" : "Ano",
     "File already exists" : "Soubor už existuje",
     "Something went wrong while attempting to scan" : "Při pokusu o skenování se něco pokazilo",
-    "success" : "úspěch",
     "Scanner" : "Skener",
     "Scanner app for Nextcloud using the SANE framework" : "Aplikace pro skenování obrázků do Nexcloud pomocí aplikačního rámce (framework) SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Přidává možnost získávat obrázky ze síťového skeneru, nebo toho připojeného přímo k počítači. K tomu je zapotřebí mít funkční nastavení SANE a podporovaný model skeneru. To, jak si tuto aplikaci nastavit, naleznete v návodu (readme)."

@@ -16,7 +16,6 @@ OC.L10N.register(
     "Yes" : "Jā",
     "File already exists" : "Datne jau pastāv",
     "Something went wrong while attempting to scan" : "Skanēšanas laikā gadījusies kļūda",
-    "success" : "veiksmīgi",
     "Scanner" : "Skaners",
     "Scanner app for Nextcloud using the SANE framework" : "Nextcloud skanēšanas aplikācija, izmantojot SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Ļauj iegūt attēlus no tīkla, vai lokāla skanera. Ir nepieciešams konfigurēts SANE un atbalstīts skaneris. Lasiet \"readme\"failu, kā uzstādīt šo programu jūsu sitēmā."

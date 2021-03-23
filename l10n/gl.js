@@ -16,7 +16,6 @@ OC.L10N.register(
     "Yes" : "Si",
     "File already exists" : "O ficheiro xa existe",
     "Something went wrong while attempting to scan" : "Algo foi mal tentando escanear",
-    "success" : "correcto",
     "Scanner" : "Escáner",
     "Scanner app for Nextcloud using the SANE framework" : "Aplicación de escaneamento para o Nextcloud empregando o contorno de traballo do SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Engade a posibilidade de obter imaxes dende un escáner activado na rede ou en local. Necesita unha configuración SANE funcional e un escáner compatíbel. Consulte o ficheiro «léeme» sobre como configurar esta aplicación no seu sistema."

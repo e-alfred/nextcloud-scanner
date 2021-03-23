@@ -14,7 +14,6 @@
     "Yes" : "כן",
     "File already exists" : "הקובץ כבר קיים",
     "Something went wrong while attempting to scan" : "משהו השתבש במהלך ניסיון הסריקה",
-    "success" : "הצלחה",
     "Scanner" : "סורק",
     "Scanner app for Nextcloud using the SANE framework" : "יישומון ריקה ל־Nextcloud בעזרת תשתית SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "היישומון מוסיף את האפשרות לקבל תמונות מסורק מחובר לרשת או מקומי. נדרשת תצורה עובדת של SANE וסורק נתמך. נא לעיין בקובץ הפירוט (README) על אופן הגדרת היישומון הזה במערכת שלך."

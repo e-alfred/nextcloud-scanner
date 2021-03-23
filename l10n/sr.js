@@ -16,7 +16,6 @@ OC.L10N.register(
     "Yes" : "Да",
     "File already exists" : "Фајл већ постоји",
     "Something went wrong while attempting to scan" : "Нешто је пошло наопако за време покушаја скенирања",
-    "success" : "успешно",
     "Scanner" : "Скенер",
     "Scanner app for Nextcloud using the SANE framework" : "Скенер апликација за Некстклауд која користи SANE радни оквир",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Додаје могућност скенирања слика са мрежног или локалног скенера. Потребна вам је исправна SANE конфигурација и подржани скенер. Погледајте readme како да подесите ову апликацију на Вашем систему."

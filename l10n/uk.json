@@ -14,7 +14,6 @@
     "Yes" : "Так",
     "File already exists" : "Файл вже існує",
     "Something went wrong while attempting to scan" : "Щось пішло не так під час спроби сканування",
-    "success" : "успішно",
     "Scanner" : "Сканер",
     "Scanner app for Nextcloud using the SANE framework" : "Застосунок Nextcloud для сканування з використанням інтерфейсу SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Додає можливість сканування зображень з мережевих або локальних сканерів. Для його роботи вам потрібне правильно налаштоване середовище SANE, а також сумісний сканер. Будь ласка, ознайомтеся з інструкцією з налаштування застосунку у вашій системі."

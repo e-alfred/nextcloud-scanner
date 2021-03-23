@@ -14,7 +14,6 @@
     "Yes" : "Áno",
     "File already exists" : "Súbor už existuje",
     "Something went wrong while attempting to scan" : "Pri pokuse o skenovanie sa niečo pokazilo",
-    "success" : "úspech",
     "Scanner" : "Skener",
     "Scanner app for Nextcloud using the SANE framework" : "Aplikácia Skener pre Nextcloud pomocou knižnice SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Pridáva možnosť získavať obrázky zo sieťového alebo lokálneho skenera. Potrebujete funkčnú konfiguráciu SANE a podporovaný skener. Prečítajte si „readme” o tom, ako nastaviť túto aplikáciu vo vašom systéme."

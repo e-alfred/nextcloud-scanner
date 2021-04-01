@@ -16,6 +16,7 @@ OC.L10N.register(
     "Yes" : "Da",
     "File already exists" : "Datoteka s tem imenom že obstaja.",
     "Something went wrong while attempting to scan" : "Med poskusom optičnega branja je prišlo do napake.",
+    "Success" : "Uspešno končano",
     "Scanner" : "Optični bralnik",
     "Scanner app for Nextcloud using the SANE framework" : "Program za optično branje s podporo okolja SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Program omogoča optično branje slikovnega materiala prek omrežnega ali krajevnega optičnega bralnika. Program zahteva delujočo namestitev SANE in podprto vrsto bralnika. Več podrobnosti o programu je na voljo v datoteki readme."

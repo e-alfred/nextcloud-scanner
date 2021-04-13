@@ -16,6 +16,7 @@ OC.L10N.register(
     "Yes" : "Igen",
     "File already exists" : "A fájl már létezik",
     "Something went wrong while attempting to scan" : "Valami balul sült el a szkennelés megpróbálásakor",
+    "Success" : "Sikerült",
     "Scanner" : "Szkenner",
     "Scanner app for Nextcloud using the SANE framework" : "Szkenner alkalmazás a Nextcloudhoz a SANE keretrendszer használatával",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Lehetővé teszi, hogy képeket olvasson be egy hálózati vagy helyi szkennerből. Egy működő SANE konfigurációra és egy támogatott nyomtatóra van szükséges. Olvassa el a leírást az alkalmazás beállításáról a rendszerén."

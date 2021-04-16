@@ -14,6 +14,7 @@
     "Yes" : "はい",
     "File already exists" : "ファイルはすでに存在します",
     "Something went wrong while attempting to scan" : "スキャンする間に何か問題が発生しました",
+    "Success" : "完了",
     "Scanner" : "スキャナー",
     "Scanner app for Nextcloud using the SANE framework" : "SANEフレームワークを利用したNextcloud向けスキャナーアプリ",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "ネットワーク対応またはローカルのスキャナーから画像を取得できる機能を追加しました。SANEの動作設定ならびにサポートされたスキャナが必要です。コンピュータ上にある、このアプリのセットアップ方法に関するreadmeを参照してください。"

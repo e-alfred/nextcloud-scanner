@@ -57,14 +57,14 @@ class ScannerStorage {
 		$file = $this->storage->newFile($name);
 		// TODO: There's probably a way to stream this without the tempfile
 		exec(
-			"sudo scanimage --mode {$this->modes[$mode]} --resolution {$resolution} -x 215 -y 297| pnmtojpeg > /tmp/img",
+			"bash " . __DIR__ . "/scanner.sh {$this->modes[$mode]}  {$resolution}",
 			$output,
 			$status
 		);
 		if ($status) {
 			throw new StorageException($this->trans->t('Something went wrong while attempting to scan'));
 		}
-		$data = file_get_contents('/tmp/img');
+		$data = file_get_contents($output);
 		$file->putContent($data);
 		return $this->trans->t('Success');
 	}

@@ -16,7 +16,7 @@ var ScannerMenuPlugin = {
 		menu.addMenuEntry({
 			id: 'scanner',
 			displayName: t('scanner', 'Scan Image'),
-			templateName: 'scan.jpg',
+			templateName: 'scan.pdf',
 			iconClass: 'icon-filetype-scanner',
 			fileType: 'file',
 			actionHandler: function (name) {

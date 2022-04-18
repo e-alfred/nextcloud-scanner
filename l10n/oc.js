@@ -13,6 +13,7 @@ OC.L10N.register(
     "No" : "Non",
     "Yes" : "Òc",
     "File already exists" : "Lo fichièr existís ja",
+    "Success" : "Succès",
     "Scanner" : "Numerizador"
 },
 "nplurals=2; plural=(n > 1);");

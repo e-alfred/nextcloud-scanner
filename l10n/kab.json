@@ -1,6 +1,5 @@
 { "translations": {
-    "Color" : "Farge",
-    "No" : "Nei",
-    "Yes" : "Ja"
+    "No" : "Uhu",
+    "Yes" : "Oui"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

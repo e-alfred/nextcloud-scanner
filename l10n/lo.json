@@ -1,5 +1,6 @@
 { "translations": {
     "No" : "ບໍ່",
-    "Yes" : "ແມ່ນແລ້ວ"
+    "Yes" : "ແມ່ນແລ້ວ",
+    "Success" : "ຄວາມສໍາເລັດ"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

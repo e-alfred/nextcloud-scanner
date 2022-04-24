@@ -1,8 +1,7 @@
 OC.L10N.register(
     "scanner",
     {
-    "Color" : "Farge",
-    "No" : "Nei",
-    "Yes" : "Ja"
+    "No" : "Ýok",
+    "Yes" : "Hawa"
 },
 "nplurals=2; plural=(n != 1);");

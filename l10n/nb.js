@@ -5,6 +5,7 @@ OC.L10N.register(
     "Color" : "Farge",
     "No" : "Nei",
     "Yes" : "Ja",
-    "File already exists" : "Filen finnes allerede"
+    "File already exists" : "Filen finnes allerede",
+    "Success" : "Vellykket"
 },
 "nplurals=2; plural=(n != 1);");

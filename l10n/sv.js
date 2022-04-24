@@ -4,8 +4,10 @@ OC.L10N.register(
     "Mode" : "Läge",
     "Color" : "Färg",
     "Greyscale" : "Gråskala",
+    "Resolution" : "Upplösning",
     "No" : "Nej",
     "Yes" : "Ja",
-    "File already exists" : "Filen finns redan"
+    "File already exists" : "Filen finns redan",
+    "Success" : "Lyckades"
 },
 "nplurals=2; plural=(n != 1);");

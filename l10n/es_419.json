@@ -2,6 +2,7 @@
     "Color" : "Color",
     "No" : "No",
     "Yes" : "Sí",
-    "File already exists" : "El archivo ya existe"
+    "File already exists" : "El archivo ya existe",
+    "Success" : "Éxito"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

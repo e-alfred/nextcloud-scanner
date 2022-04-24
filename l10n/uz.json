@@ -1,5 +1,6 @@
 { "translations": {
     "No" : "Yo'q",
-    "Yes" : "Ha"
+    "Yes" : "Ha",
+    "Success" : "Muvaffaqiyat"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

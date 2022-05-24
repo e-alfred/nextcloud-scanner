@@ -21,4 +21,4 @@ OC.L10N.register(
     "Scanner app for Nextcloud using the SANE framework" : "Aplicativo de escaneamento para o Nextcloud usando o framework SANE",
     "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Adiciona a capacidade de adquirir imagens de um scanner local ou em rede. Você precisa de uma configuração SANE funcional e um scanner suportado. Leia o readme sobre como configurar este aplicativo."
 },
-"nplurals=2; plural=(n > 1);");
+"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

@@ -12,7 +12,7 @@
 namespace OCA\Scanner\Storage;
 
 use Exception;
-use OC\Files\Node\Folder;
+use OC\Files\Node\LazyUserFolder;
 use OCP\Files\GenericFileException;
 use OCP\Files\NotPermittedException;
 use \OCP\IL10N;
@@ -31,7 +31,7 @@ class ScannerStorage {
 		2 => 'Lineart'
 	];
 
-	public function __construct(Folder $storage, IL10N $trans) {
+	public function __construct(LazyUserFolder $storage, IL10N $trans) {
 		$this->storage = $storage;
 		$this->trans = $trans;
 	}

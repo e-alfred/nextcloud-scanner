@@ -5,6 +5,7 @@ OC.L10N.register(
     "Color" : "Färg",
     "Greyscale" : "Gråskala",
     "Resolution" : "Upplösning",
+    "Scan complete" : "Skanning slutförd",
     "No" : "Nej",
     "Yes" : "Ja",
     "File already exists" : "Filen finns redan",

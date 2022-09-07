@@ -1,8 +1,8 @@
 OC.L10N.register(
     "scanner",
     {
-    "No" : "Yo'q",
-    "Yes" : "Ha",
-    "Success" : "Muvaffaqiyat"
+    "No" : "No",
+    "Yes" : "Yes",
+    "Success" : "Success"
 },
 "nplurals=1; plural=0;");

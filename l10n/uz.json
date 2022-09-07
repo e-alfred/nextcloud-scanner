@@ -1,6 +1,6 @@
 { "translations": {
-    "No" : "Yo'q",
-    "Yes" : "Ha",
-    "Success" : "Muvaffaqiyat"
+    "No" : "No",
+    "Yes" : "Yes",
+    "Success" : "Success"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

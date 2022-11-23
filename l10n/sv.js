@@ -6,6 +6,7 @@ OC.L10N.register(
     "Color" : "Färg",
     "Greyscale" : "Gråskala",
     "Resolution" : "Upplösning",
+    "Please adjust scan parameters" : "Vänligen ändra scanningsinställningarna",
     "Scan Options" : "Analysalternativ",
     "Scan aborted." : "Analys avbruten.",
     "Scan started." : "Analys startad.",
@@ -13,6 +14,9 @@ OC.L10N.register(
     "No" : "Nej",
     "Yes" : "Ja",
     "File already exists" : "Filen finns redan",
-    "Success" : "Lyckades"
+    "Something went wrong while attempting to scan" : "Något blev fel vid scanningen",
+    "Success" : "Lyckades",
+    "Scanner" : "Scanner",
+    "Scanner app for Nextcloud using the SANE framework" : "Scannerappen för Nextcloud använder SANE ramverket "
 },
 "nplurals=2; plural=(n != 1);");

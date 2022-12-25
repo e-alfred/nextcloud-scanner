@@ -17,6 +17,6 @@
     <screenshot>https://github.com/e-alfred/nextcloud-scanner/raw/master/screenshots/menu.png</screenshot>
     <repository>https://github.com/e-alfred/nextcloud-scanner</repository>
     <dependencies>
-    <nextcloud min-version="19" max-version="24" />
+    <nextcloud min-version="19" max-version="25" />
     </dependencies>
 </info>

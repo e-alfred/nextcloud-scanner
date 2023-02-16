@@ -1,6 +1,7 @@
 { "translations": {
     "Color" : "Värv",
     "No" : "Ei",
-    "Yes" : "Jah"
+    "Yes" : "Jah",
+    "File already exists" : "Fail on juba olemas"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

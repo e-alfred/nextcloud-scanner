@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Color" : "Värv",
     "No" : "Ei",
-    "Yes" : "Jah"
+    "Yes" : "Jah",
+    "File already exists" : "Fail on juba olemas"
 },
 "nplurals=2; plural=(n != 1);");

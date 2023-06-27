@@ -5,7 +5,7 @@ OC.L10N.register(
     "Mode" : "모드",
     "Color" : "색",
     "Resolution" : "해상도",
-    "Please adjust scan parameters" : "스캔 인자를 조정하십시오",
+    "Please adjust scan parameters" : "스캔 인자를 조정해 주세요.",
     "Scan Options" : "스캔 옵션",
     "Scan aborted." : "스캔이 중단되었습니다.",
     "Scan started." : "스캔을 시작했습니다.",

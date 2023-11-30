@@ -12,14 +12,12 @@
 namespace OCA\Scanner\AppInfo;
 
 use OCP\AppFramework\App;
-use \OCA\Scanner\Storage\ScannerStorage;
+use OCA\Scanner\Storage\ScannerStorage;
 
-require_once __DIR__ . '/autoload.php';
-
-class Application extends App {
-
+class Application extends App{ 
+  const APPNAME = 'scanner';
   public function __construct(array $urlParams=array()){
-    parent::__construct('scanner', $urlParams);
+    parent::__construct(self::APPNAME, $urlParams);
 
     $container = $this->getContainer();
 

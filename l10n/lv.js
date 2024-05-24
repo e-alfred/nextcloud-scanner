@@ -18,6 +18,6 @@ OC.L10N.register(
     "Something went wrong while attempting to scan" : "Skanēšanas laikā gadījusies kļūda",
     "Scanner" : "Skaners",
     "Scanner app for Nextcloud using the SANE framework" : "Nextcloud skanēšanas aplikācija, izmantojot SANE",
-    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Ļauj iegūt attēlus no tīkla, vai lokāla skanera. Ir nepieciešams konfigurēts SANE un atbalstīts skaneris. Lasiet \"readme\"failu, kā uzstādīt šo programu jūsu sitēmā."
+    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Pievieno iespēju iegūt attēlus no tīkla vai vietēja skenera. Ir nepieciešams konfigurēts SANE un atbalstīts skeneris. Lūgums apskatīt  \"readme\" datni, kā sitēmā uzstādīt šo lietotni."
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");

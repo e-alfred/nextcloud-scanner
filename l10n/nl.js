@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Lijntekeningen",
     "Resolution" : "Resolutie",
     "Please adjust scan parameters" : "Verander de scan parametes",
+    "Filename" : "Bestandsnaam",
     "Scan Options" : "Scan opties",
     "Scan aborted." : "Scan afgebroken.",
     "Scan started." : "Scan gestart.",

@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Đường kẻ",
     "Resolution" : "Độ phân giải",
     "Please adjust scan parameters" : "Vui lòng điều chỉnh tham số quét",
+    "Filename" : "Tên tập tin",
     "Scan Options" : "Tùy chọn quét",
     "Scan aborted." : "Đã hủy quét.",
     "Scan started." : "Đã bắt đầu quét.",

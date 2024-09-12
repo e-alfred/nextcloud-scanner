@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "אומנות בקווים",
     "Resolution" : "רזולוציה",
     "Please adjust scan parameters" : "נא להתאים את משתני הסריקה",
+    "Filename" : "שם קובץ",
     "Scan Options" : "אפשרויות סריקה",
     "Scan aborted." : "הסריקה בוטלה.",
     "Scan started." : "הסריקה החלה.",

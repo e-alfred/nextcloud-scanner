@@ -5,6 +5,7 @@ OC.L10N.register(
     "Color" : "Боја",
     "No" : "No",
     "Yes" : "Yes",
+    "Filename" : "Име на датотека",
     "File already exists" : "Датотека веќе постои",
     "Success" : "Успешно"
 },

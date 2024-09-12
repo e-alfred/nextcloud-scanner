@@ -7,6 +7,7 @@ OC.L10N.register(
     "Greyscale" : "Gråskala",
     "Resolution" : "Upplösning",
     "Please adjust scan parameters" : "Vänligen ändra scanningsinställningarna",
+    "Filename" : "Filnamn",
     "Scan Options" : "Analysalternativ",
     "Scan aborted." : "Analys avbruten.",
     "Scan started." : "Analys startad.",

@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Лінійний",
     "Resolution" : "Роздільна здатність",
     "Please adjust scan parameters" : "Будь ласка налаштуйте параметри сканування",
+    "Filename" : "Ім'я файлу",
     "Scan Options" : "Опції сканування",
     "Scan aborted." : "Сканування скасовано.",
     "Scan started." : "Розпочато сканування",

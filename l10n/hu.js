@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Vonalábra",
     "Resolution" : "Felbontás",
     "Please adjust scan parameters" : "Módosítsa a szkennelési paramétereket",
+    "Filename" : "Fájlnév",
     "Scan Options" : "Szkennelési beállítások",
     "Scan aborted." : "Szkennelés megszakítva.",
     "Scan started." : "Szkennelés elindítva.",

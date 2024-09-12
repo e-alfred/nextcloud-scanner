@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Líneas",
     "Resolution" : "Resolución",
     "Please adjust scan parameters" : "Por favor, ajusta los parámetros de escaneo",
+    "Filename" : "Nombre de archivo",
     "Scan Options" : "Opciones de escaneo",
     "Scan aborted." : "Escaneo abortado",
     "Scan started." : "Escaneo iniciado",

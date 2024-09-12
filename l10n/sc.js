@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Lineart",
     "Resolution" : "Risolutzione",
     "Please adjust scan parameters" : "Règula is paràmetros de iscansione",
+    "Filename" : "Nùmene de s'archìviu",
     "Scan Options" : "Sèberos de iscansione",
     "Scan aborted." : "Iscansione firmada.",
     "Scan started." : "Iscansione aviada.",

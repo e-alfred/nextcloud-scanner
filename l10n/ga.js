@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Líneart",
     "Resolution" : "Rún",
     "Please adjust scan parameters" : "Le do thoil a choigeartú paraiméadair scanadh",
+    "Filename" : "Ainm comhaid",
     "Scan Options" : "Roghanna Scan",
     "Scan aborted." : "Cuireadh deireadh leis an scanadh.",
     "Scan started." : "Thosaigh an scanadh.",

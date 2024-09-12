@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Цртеж",
     "Resolution" : "Резолуција",
     "Please adjust scan parameters" : "Подесите параметре скенирања",
+    "Filename" : "Назив фајла",
     "Scan Options" : "Опције скенирања",
     "Scan aborted." : "Скенирање прекинуто.",
     "Scan started." : "Скенирање започето.",

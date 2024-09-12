@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Черно-белый",
     "Resolution" : "Разрешение",
     "Please adjust scan parameters" : "Пожалуйста, настройте параметры сканирования",
+    "Filename" : "Имя файла",
     "Scan Options" : "Настройки сканирования",
     "Scan aborted." : "Сканирование прервано.",
     "Scan started." : "Сканирование запущено.",

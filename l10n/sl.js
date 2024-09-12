@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Črtni izris",
     "Resolution" : "Ločljivost",
     "Please adjust scan parameters" : "Prilagoditev parametrov bralnika",
+    "Filename" : "Ime datoteke",
     "Scan Options" : "Možnosti optičnega bralnika",
     "Scan aborted." : "Optično branje je prekinjeno.",
     "Scan started." : "Optično branje je začeto.",

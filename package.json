@@ -1,0 +1,33 @@
+{
+  "name": "scanner",
+  "version": "0.0.1",
+  "description": "Web view for nc scanner",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "engines": {
+    "node": "^20.0.0"
+  },
+  "scripts": {
+    "build": "webpack --node-env production --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nextcloud/browserslist-config": "^3.0.1",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "browserslist": [
+    "extends @nextcloud/browserslist-config"
+  ],
+  "dependencies": {
+    "@nextcloud/auth": "^2.4.0",
+    "@nextcloud/event-bus": "^3.3.1",
+    "@nextcloud/files": "^3.8.0",
+    "path": "^0.12.7",
+    "process": "^0.11.10"
+  }
+}

@@ -58,6 +58,8 @@ class ScannerController extends Controller {
 			$result = $this->storage->scanFile($path, $mode, $resolution);
 			$status = Http::STATUS_OK;
 		} catch (StorageException $e) {
+			$result = $e->getMessage();
+			$status = Http::STATUS_BAD_REQUEST;
 		} catch (GenericFileException $e) {
 		} catch (NotPermittedException $e) {
 			$result = $e->getMessage();

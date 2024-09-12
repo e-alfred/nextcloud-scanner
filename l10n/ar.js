@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "الخط",
     "Resolution" : "التّباين",
     "Please adjust scan parameters" : "يرجى ضبط مُعامِلات المسح",
+    "Filename" : "اسم الملف",
     "Scan Options" : "خيارات المسح",
     "Scan aborted." : "أجهض المسح.",
     "Scan started." : "بدء المسح.",

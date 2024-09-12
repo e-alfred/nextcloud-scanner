@@ -4,6 +4,7 @@ OC.L10N.register(
     "Scan Image" : "Digitalizar Imagem",
     "Color" : "Cor",
     "Please adjust scan parameters" : "Por favor, ajuste os parâmetros da digitalização",
+    "Filename" : "Nome do ficheiro",
     "Scan Options" : "Opções de Digitalização",
     "Scan aborted." : "Digitalização abortada.",
     "Scan started." : "Digitalização iniciada.",

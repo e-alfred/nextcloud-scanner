@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Linii de artă",
     "Resolution" : "Rezoluție",
     "Please adjust scan parameters" : "Te rog ajustează parametrii de scanare",
+    "Filename" : "Nume fișier",
     "Scan Options" : "Opțiuni Scanare",
     "Scan aborted." : "Scanare întreruptă.",
     "Scan started." : "Scanare pornită.",

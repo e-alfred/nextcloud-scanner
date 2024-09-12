@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "線條藝術",
     "Resolution" : "解析度",
     "Please adjust scan parameters" : "請調整掃描參數",
+    "Filename" : "檔案名稱",
     "Scan Options" : "掃描選項",
     "Scan aborted." : "掃描中止",
     "Scan started." : "開始掃描",

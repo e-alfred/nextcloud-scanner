@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Útlínumyndir",
     "Resolution" : "Upplausn",
     "Please adjust scan parameters" : "Breyttu stillingum fyrir skönnunina",
+    "Filename" : "Skráarheiti",
     "Scan Options" : "Valkostir skönnunar",
     "Scan aborted." : "Hætt var við skönnun.",
     "Scan started." : "Skönnun hafin.",

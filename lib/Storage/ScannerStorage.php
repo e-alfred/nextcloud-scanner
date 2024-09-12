@@ -51,7 +51,7 @@ class ScannerStorage {
 	 */
 	public function scanFile($name, $mode = 0, $resolution = 300) {
 		if ($this->storage->nodeExists($name)) {
-			// TODO: This can happen because we don't refresh the file listing
+			// TODO: This can happen because we don't refresh the file listing after previous exception
 			throw new StorageException($this->trans->t('File already exists'));
 		}
 		$file = $this->storage->newFile($name);
@@ -62,11 +62,14 @@ class ScannerStorage {
 			$status
 		);
 		if ($status) {
+			// TODO: needed for tests
+			// return $file->getId();
+
 			throw new StorageException($this->trans->t('Something went wrong while attempting to scan'));
 		}
 		$data = file_get_contents('/tmp/img');
 		$file->putContent($data);
-		return $this->trans->t('Success');
+		return $file->getId();
 	}
 
 }

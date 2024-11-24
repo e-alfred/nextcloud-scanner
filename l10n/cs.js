@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Čárová grafika",
     "Resolution" : "Rozlišení",
     "Please adjust scan parameters" : "Dolaďte parametry skenování",
+    "Filename" : "Soubor",
     "Scan Options" : "Předvolby skenování",
     "Scan aborted." : "Skenování přerušeno.",
     "Scan started." : "Skenování zahájeno.",

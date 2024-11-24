@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Tonlamasız çizim",
     "Resolution" : "Çözünürlük",
     "Please adjust scan parameters" : "Lütfen tarama ayarlarını yapın",
+    "Filename" : "Dosya adı",
     "Scan Options" : "Tarama Ayarları",
     "Scan aborted." : "Tarama iptal edildi.",
     "Scan started." : "Tarama başlatıldı.",

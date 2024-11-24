@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Viivapiirros",
     "Resolution" : "Resoluutio",
     "Please adjust scan parameters" : "Säädä skannauksen parametrejä",
+    "Filename" : "Tiedostonimi",
     "Scan Options" : "Skannausvalinnat",
     "Scan aborted." : "Skannaus peruttu.",
     "Scan started." : "Skannaus aloitettu.",

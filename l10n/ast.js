@@ -8,6 +8,7 @@ OC.L10N.register(
     "Scan Options" : "Opciones del escanéu",
     "Scan started." : "Anicióse l'escanéu.",
     "Scan complete" : "Completóse l'escanéu",
+    "Filename" : "Nome de ficheru",
     "No" : "Non",
     "Yes" : "Sí",
     "File already exists" : "El ficheru yá esiste",

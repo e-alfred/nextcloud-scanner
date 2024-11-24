@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "خطی",
     "Resolution" : "وضوح",
     "Please adjust scan parameters" : "لطفا پارامترهای اسکن را تنظیم کنید",
+    "Filename" : "نام پرونده",
     "Scan Options" : "گزینه های اسکن",
     "Scan aborted." : "اسکن متوقف شد",
     "Scan started." : "اسکن شروع شد",

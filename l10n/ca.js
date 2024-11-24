@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Lineart",
     "Resolution" : "Resolució",
     "Please adjust scan parameters" : "Si us plau, ajusteu els paràmetres de l'escaneig",
+    "Filename" : "Nom del fitxer",
     "Scan Options" : "Opcions d'Escaneig",
     "Scan aborted." : "Escaneig avortat.",
     "Scan started." : "Escaneig engegat.",

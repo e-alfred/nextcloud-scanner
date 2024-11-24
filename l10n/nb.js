@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Blyantkunst",
     "Resolution" : "Oppløsning",
     "Please adjust scan parameters" : "Vennligst juster skanneparametrene",
+    "Filename" : "Filnavn",
     "Scan Options" : "Alternativer for skanning",
     "Scan aborted." : "Skanning avbrutt.",
     "Scan started." : "Skanning startet.",

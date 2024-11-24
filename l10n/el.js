@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Σκίτσο",
     "Resolution" : "Ανάλυση",
     "Please adjust scan parameters" : "Παρακαλούμε προσαρμόστε τις ρυθμίσεις σάρωσης",
+    "Filename" : "Όνομα αρχείου",
     "Scan Options" : "Ρυθμίσεις σάρωσης",
     "Scan aborted." : "Η σάρωση ακυρώθηκε.",
     "Scan started." : "Η σάρωση ξεκίνησε.",

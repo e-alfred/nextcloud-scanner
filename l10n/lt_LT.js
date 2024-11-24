@@ -8,6 +8,7 @@ OC.L10N.register(
     "Lineart" : "Linijinis",
     "Resolution" : "Raiška",
     "Please adjust scan parameters" : "Suderinkite skenavimo parametrus",
+    "Filename" : "Failo pavadinimas",
     "Scan Options" : "Skenavimo parinktys",
     "Scan aborted." : "Skenavimas nutrauktas.",
     "Scan started." : "Skenavimas pradėtas.",

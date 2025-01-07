@@ -2,6 +2,7 @@
     "Color" : "Warna",
     "No" : "Tidak",
     "Yes" : "Ya",
-    "File already exists" : "Berkas sudah ada"
+    "File already exists" : "Berkas sudah ada",
+    "Success" : "Berhasil"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

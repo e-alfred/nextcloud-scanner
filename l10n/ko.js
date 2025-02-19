@@ -4,6 +4,8 @@ OC.L10N.register(
     "Scan Image" : "그림 스캔",
     "Mode" : "모드",
     "Color" : "색",
+    "Greyscale" : "그레이스케일",
+    "Lineart" : "라인아트",
     "Resolution" : "해상도",
     "Please adjust scan parameters" : "스캔 인자를 조정해 주세요.",
     "Scan Options" : "스캔 옵션",

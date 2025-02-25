@@ -7,7 +7,7 @@ OC.L10N.register(
     "Greyscale" : "Gråtoner",
     "Lineart" : "Lineær",
     "Resolution" : "Opløsning",
-    "Please adjust scan parameters" : "Justér venligst skan konfigurationer",
+    "Please adjust scan parameters" : "Juster venligst skan konfigurationer",
     "Scan Options" : "Skan indstillinger",
     "Scan aborted." : "Skanning afbrudt.",
     "Scan started." : "Skanning startet.",

@@ -1,4 +1,6 @@
 { "translations": {
+    "Mode" : "Mod",
+    "Color" : "Liv",
     "No" : "Nan",
     "Yes" : "Ya",
     "Success" : "Graet"

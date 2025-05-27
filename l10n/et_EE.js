@@ -1,6 +1,7 @@
 OC.L10N.register(
     "scanner",
     {
+    "Mode" : "Režiim",
     "Color" : "Värv",
     "No" : "Ei",
     "Yes" : "Jah",

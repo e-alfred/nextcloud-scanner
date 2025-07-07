@@ -1,6 +1,7 @@
 OC.L10N.register(
     "scanner",
     {
+    "Mode" : "Hali",
     "Color" : "Rangi",
     "No" : "Hapana",
     "Yes" : "Ndiyo",

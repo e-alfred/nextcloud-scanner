@@ -1,9 +1,22 @@
 { "translations": {
+    "Scan Image" : "Changanua picha",
     "Mode" : "Hali",
     "Color" : "Rangi",
+    "Greyscale" : "Greyscale",
+    "Lineart" : "Lineart",
+    "Resolution" : "Azimio",
+    "Please adjust scan parameters" : "Tafadhali rekebisha vigezo vya kuchanganua",
+    "Scan Options" : "Chaguzi za Kuchanganua",
+    "Scan aborted." : "Uchanganuzi umesitishwa.",
+    "Scan started." : "Uchanganuzi umeanza.",
+    "Scan complete" : "Uchanganuzi umekamilika",
     "No" : "Hapana",
     "Yes" : "Ndiyo",
     "File already exists" : "Faili lipo tayari",
-    "Success" : "Mafanikio"
+    "Something went wrong while attempting to scan" : "Kuna tatizo lililotokea wakati wa kujaribu kuchanganua",
+    "Success" : "Mafanikio",
+    "Scanner" : "Kichanganuzi",
+    "Scanner app for Nextcloud using the SANE framework" : "Programu ya Kichanganuzi cha Nextcloud inayotumia mfumo wa SANE",
+    "Adds the ability to acquire images from a network-enabled or local scanner. You need a working SANE configuration and a supported scanner. Please see the readme on how to set up this app on your system." : "Inaongeza uwezo wa kupata picha kutoka kwa kichanganuzi kilichowezeshwa na mtandao au cha ndani. Unahitaji usanidi wa SANE unaofanya kazi na kichanganuzi kinachotumika. Tafadhali tazama somo la jinsi ya kusanidi programu hii kwenye mfumo wako."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

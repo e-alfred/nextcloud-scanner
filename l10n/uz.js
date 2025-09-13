@@ -1,6 +1,7 @@
 OC.L10N.register(
     "scanner",
     {
+    "Mode" : "Rejim",
     "Color" : "Rang",
     "No" : "No",
     "Yes" : "Yes",
